@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ title }}</title>
+	<meta name="description" content="A Digital Designer who is eager to keep growing while giving.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Open Graph -->
+	<meta property="og:title" content="Digital Designer | Sami Moya Medina">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.smoya.me/">
+
+	<!-- Favi, Icons -->
+	<link rel="icon" href="/_assets/images/favicon.png" sizes="any">
+	<link rel="icon" href="/_assets/images/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/_assets/images/favicon.png">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body class="{{theme}}">
+	<div class="body-container">
+		{% include "_header.njk" %}
+		<div class="contained-wrapper" id="smooth-wrapper">
+			<div class="contained-content" id="smooth-content">
+				<main class="main">
+					{{ content | safe }}
+				</main>
+				{% include "_footer.njk" %}
+			</div>
+		</div>
+	</div>
+	<!-- Cursor -->
+	<div id="cursor" aria-hidden="true" data-scroll-sticky>
+		<div class="cursor__circle" aria-hidden="true"></div>
+	</div>
+	<!-- Scripts -->
+	<script src="/script.js"></script>
+
+</body>
+
+</html>
