@@ -1,0 +1,175 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: unset;
+  font-size: var(--fs-root);
+  font-family: var(--primary-type);
+  font-kerning: normal;
+}
+
+p,
+a {
+  color: inherit;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* Images have mutable height and width */
+img {
+  display: block;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+:root {
+  /* -------------------------------------------------------------------------- */
+  /*                             Type Variables                            */
+  /* -------------------------------------------------------------------------- */
+  /* Family */
+  --primary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+  --secondary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
+  /* Size */
+  --fs-root: clamp(1.125rem, calc(0.5rem + 0.723vw), calc(0.5rem + 0.723vw));
+  --fs-display: var(--fs-root);
+  --fs-A: var(--fs-root);
+  --fs-B: var(--fs-root);
+  --fs-C: var(--fs-root);
+  --fs-D: var(--fs-root);
+  --fs-E: var(--fs-root);
+  /* Weight */
+  --fw-B: 400;
+  --fw-C: 300;
+  --fw-D: 300;
+  /* Leading */
+  --lh-display: 0.95;
+  --lh-A: 1;
+  --lh-B: 1;
+  --lh-C: 1;
+  --lh-D: 1;
+  --lh-E: 1;
+  /* Tracking */
+  --ls-display: -0.01em;
+  --ls-A: -0.01em;
+  --ls-B: -0.01em;
+  --ls-C: -0.01em;
+  --ls-D: -0.01em;
+  --ls-E: -0.01em;
+  /* -------------------------------------------------------------------------- */
+  /*                               Set base values                              */
+  /* -------------------------------------------------------------------------- */
+  --foreground-color: var(--main-night);
+  --background-color: var(--main-bright);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                                                            */
+/*                                                                            */
+/*                                 UTILITIES                                  */
+/*                                                                            */
+/*                                                                            */
+/* -------------------------------------------------------------------------- */
+.noevents {
+  /* Used for: hero animation, removed on complete */
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               GRID UTILITIES                               */
+.start1 {
+  grid-column-start: 1;
+}
+
+.start2 {
+  grid-column-start: 2;
+}
+
+.start3 {
+  grid-column-start: 3;
+}
+
+.start4 {
+  grid-column-start: 4;
+}
+
+.start5 {
+  grid-column-start: 5;
+}
+
+.start6 {
+  grid-column-start: 6;
+}
+
+.start7 {
+  grid-column-start: 7;
+}
+
+.start8 {
+  grid-column-start: 8;
+}
+
+.start9 {
+  grid-column-start: 9;
+}
+
+.end5 {
+  grid-column-end: 5;
+}
+
+.end6 {
+  grid-column-end: 6;
+}
+
+.end7 {
+  grid-column-end: 7;
+}
+
+.end8 {
+  grid-column-end: 8;
+}
+
+.end9 {
+  grid-column-end: 9;
+}
+
+.end10 {
+  grid-column-end: 10;
+}
+
+.end11 {
+  grid-column-end: 11;
+}
+
+.end12 {
+  grid-column-end: 12;
+}
+
+.end13 {
+  grid-column-end: 13;
+}
+
+.logotype {
+  max-width: 100px;
+}/*# sourceMappingURL=style.css.map */

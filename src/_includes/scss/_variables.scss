@@ -1,0 +1,46 @@
+:root {
+	/* -------------------------------------------------------------------------- */
+	/*                             Type Variables                            */
+	/* -------------------------------------------------------------------------- */
+
+	/* Family */
+	--primary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+	--secondary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
+
+	/* Size */
+	--fs-root: clamp(1.125rem, calc(0.5rem + 0.723vw), calc(0.5rem + 0.723vw));
+	--fs-display: var(--fs-root);
+	--fs-A: var(--fs-root);
+	--fs-B: var(--fs-root);
+	--fs-C: var(--fs-root);
+	--fs-D: var(--fs-root);
+	--fs-E: var(--fs-root);
+
+	/* Weight */
+	--fw-B: 400;
+	--fw-C: 300;
+	--fw-D: 300;
+
+	/* Leading */
+	--lh-display: 0.95;
+	--lh-A: 1;
+	--lh-B: 1;
+	--lh-C: 1;
+	--lh-D: 1;
+	--lh-E: 1;
+
+	/* Tracking */
+	--ls-display: -0.01em;
+	--ls-A: -0.01em;
+	--ls-B: -0.01em;
+	--ls-C: -0.01em;
+	--ls-D: -0.01em;
+	--ls-E: -0.01em;
+
+	/* -------------------------------------------------------------------------- */
+	/*                               Set base values                              */
+	/* -------------------------------------------------------------------------- */
+
+	--foreground-color: var(--main-night);
+	--background-color: var(--main-bright);
+}

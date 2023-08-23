@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-weight: unset;
+	font-size: var(--fs-root);
+	font-family: var(--primary-type);
+	font-kerning: normal;
+}
+
+p,
+a {
+	color: inherit;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+	list-style: none;
+}
+
+/* Images have mutable height and width */
+img {
+	display: block;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+/* remove default dot (•) sign */
+::marker {
+	content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+	display: none;
+}

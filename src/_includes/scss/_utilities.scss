@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------- */
+/*                                                                            */
+/*                                                                            */
+/*                                 UTILITIES                                  */
+/*                                                                            */
+/*                                                                            */
+/* -------------------------------------------------------------------------- */
+
+@mixin typelvl($letter) {
+	font-size: var(--fs-#{$letter});
+	letter-spacing: var(--ls-#{$letter});
+	line-height: var(--lh-#{$letter});
+	font-weight: var(--fw-#{$letter});
+}
+
+.noevents {
+	/* Used for: hero animation, removed on complete */
+	pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               GRID UTILITIES                               */
+
+@mixin gridSpan($start: true, $value) {
+	@if $start {
+		.start#{$value} {
+			grid-column-start: #{$value};
+		}
+	} @else {
+		.end#{$value} {
+			grid-column-end: #{$value};
+		}
+	}
+}
+
+@for $gridColStart from 1 through 9 {
+	@include gridSpan(true, $gridColStart);
+}
+
+@for $gridColEnd from 5 through 13 {
+	@include gridSpan(false, $gridColEnd);
+}

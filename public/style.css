@@ -1,0 +1,168 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: unset;
+  font-family: unset;
+  font-size: unset;
+}
+
+p,
+a {
+  color: inherit;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* Images have mutable height and width */
+img {
+  display: block;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+:root {
+  /* -------------------------------------------------------------------------- */
+  /*                             Type Variables                            */
+  /* -------------------------------------------------------------------------- */
+  /* Family */
+  --primary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+  /* Size */
+  --fs-root: clamp(1.125rem, calc(0.5rem + 0.723vw), calc(0.5rem + 0.723vw));
+  --fs-display: clamp(3rem, calc(0.5rem + 8.622vw), calc(0.5rem + 8.622vw));
+  --fs-A: clamp(2.75rem, calc(0.5rem + calc(4.3vw + 2.15vh)), calc(0.5rem + calc(4.3vw + 2.15vh)));
+  --fs-B: clamp(2.36rem, calc(0.5rem + 3.85vw), calc(0.5rem + 3.85vw));
+  --fs-C: clamp(1.425rem, calc(0.5rem + 1.35vw), calc(0.5rem + 1.35vw));
+  --fs-D: clamp(1.125rem, calc(0.5rem + 0.939vw), calc(0.5rem + 0.939vw));
+  --fs-E: var(--fs-root);
+  /* Weight */
+  --fw-B: 400;
+  --fw-C: 300;
+  --fw-D: 300;
+  /* Leading */
+  --lh-display: 0.95;
+  --lh-A: 1.06;
+  --lh-B: 1.26;
+  --lh-C: 1.275;
+  --lh-D: 1.52;
+  --lh-E: 1.5;
+  /* Tracking */
+  --ls-display: -0.05em;
+  --ls-A: -0.01em;
+  --ls-B: -0.045em;
+  --ls-C: -0.015em;
+  --ls-D: -0.005em;
+  --ls-E: 0.0075em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                                                            */
+/*                                                                            */
+/*                                 UTILITIES                                  */
+/*                                                                            */
+/*                                                                            */
+/* -------------------------------------------------------------------------- */
+.noevents {
+  /* Used for: hero animation, removed on complete */
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               GRID UTILITIES                               */
+.start1 {
+  grid-column-start: 1;
+}
+
+.start2 {
+  grid-column-start: 2;
+}
+
+.start3 {
+  grid-column-start: 3;
+}
+
+.start4 {
+  grid-column-start: 4;
+}
+
+.start5 {
+  grid-column-start: 5;
+}
+
+.start6 {
+  grid-column-start: 6;
+}
+
+.start7 {
+  grid-column-start: 7;
+}
+
+.start8 {
+  grid-column-start: 8;
+}
+
+.start9 {
+  grid-column-start: 9;
+}
+
+.end5 {
+  grid-column-end: 5;
+}
+
+.end6 {
+  grid-column-end: 6;
+}
+
+.end7 {
+  grid-column-end: 7;
+}
+
+.end8 {
+  grid-column-end: 8;
+}
+
+.end9 {
+  grid-column-end: 9;
+}
+
+.end10 {
+  grid-column-end: 10;
+}
+
+.end11 {
+  grid-column-end: 11;
+}
+
+.end12 {
+  grid-column-end: 12;
+}
+
+.end13 {
+  grid-column-end: 13;
+}
+
+.logotype {
+  max-width: 100px;
+}/*# sourceMappingURL=style.css.map */
