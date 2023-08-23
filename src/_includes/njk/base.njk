@@ -17,14 +17,13 @@
 	<link rel="apple-touch-icon" href="/_assets/images/favicon.png">
 	<!-- Stylesheet -->
 	<link rel="stylesheet" href="style.css">
-
 </head>
 
-<body class="{{theme}}">
-	<div class="body-container">
+<body class="body">
+	<div class="wrapper">
 		{% include "_header.njk" %}
-		<div class="contained-wrapper" id="smooth-wrapper">
-			<div class="contained-content" id="smooth-content">
+		<div id="smooth-wrapper">
+			<div id="smooth-content">
 				<main class="main">
 					{{ content | safe }}
 				</main>
