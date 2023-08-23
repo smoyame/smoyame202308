@@ -10,12 +10,13 @@ module.exports = function (eleventyConfig) {
 		// // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
 		// // Works great with a separate bundler writing files to your output folder.
 		// // e.g. `watch: ["_site/**/*.css"]`
-		watch: ["public/stylesheets/*.css"],
+		watch: ["*.css"],
 
 		// Show local network IP addresses for device testing
 		showAllHosts: true,
 	});
 
+	eleventyConfig.addPassthroughCopy({ "./src/_includes/scss/style.css": "./style.css" });
 	eleventyConfig.addPassthroughCopy("./src/_assets");
 	eleventyConfig.addPassthroughCopy("./src/.htaccess");
 
