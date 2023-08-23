@@ -6,8 +6,9 @@
   margin: 0;
   padding: 0;
   font-weight: unset;
-  font-family: unset;
-  font-size: unset;
+  font-size: var(--fs-root);
+  font-family: var(--primary-type);
+  font-kerning: normal;
 }
 
 p,
@@ -49,13 +50,14 @@ textarea {
   /* -------------------------------------------------------------------------- */
   /* Family */
   --primary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+  --secondary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
   /* Size */
   --fs-root: clamp(1.125rem, calc(0.5rem + 0.723vw), calc(0.5rem + 0.723vw));
-  --fs-display: clamp(3rem, calc(0.5rem + 8.622vw), calc(0.5rem + 8.622vw));
-  --fs-A: clamp(2.75rem, calc(0.5rem + calc(4.3vw + 2.15vh)), calc(0.5rem + calc(4.3vw + 2.15vh)));
-  --fs-B: clamp(2.36rem, calc(0.5rem + 3.85vw), calc(0.5rem + 3.85vw));
-  --fs-C: clamp(1.425rem, calc(0.5rem + 1.35vw), calc(0.5rem + 1.35vw));
-  --fs-D: clamp(1.125rem, calc(0.5rem + 0.939vw), calc(0.5rem + 0.939vw));
+  --fs-display: var(--fs-root);
+  --fs-A: var(--fs-root);
+  --fs-B: var(--fs-root);
+  --fs-C: var(--fs-root);
+  --fs-D: var(--fs-root);
   --fs-E: var(--fs-root);
   /* Weight */
   --fw-B: 400;
@@ -63,18 +65,23 @@ textarea {
   --fw-D: 300;
   /* Leading */
   --lh-display: 0.95;
-  --lh-A: 1.06;
-  --lh-B: 1.26;
-  --lh-C: 1.275;
-  --lh-D: 1.52;
-  --lh-E: 1.5;
+  --lh-A: 1;
+  --lh-B: 1;
+  --lh-C: 1;
+  --lh-D: 1;
+  --lh-E: 1;
   /* Tracking */
-  --ls-display: -0.05em;
+  --ls-display: -0.01em;
   --ls-A: -0.01em;
-  --ls-B: -0.045em;
-  --ls-C: -0.015em;
-  --ls-D: -0.005em;
-  --ls-E: 0.0075em;
+  --ls-B: -0.01em;
+  --ls-C: -0.01em;
+  --ls-D: -0.01em;
+  --ls-E: -0.01em;
+  /* -------------------------------------------------------------------------- */
+  /*                               Set base values                              */
+  /* -------------------------------------------------------------------------- */
+  --foreground-color: var(--main-night);
+  --background-color: var(--main-bright);
 }
 
 /* -------------------------------------------------------------------------- */
