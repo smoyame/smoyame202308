@@ -1,18 +1,10 @@
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addWatchTarget("./src/_includes/scss/style.scss");
+
 	eleventyConfig.setServerOptions({
-		// Whether the live reload snippet is used
 		liveReload: true,
-
-		// Whether DOM diffing updates are applied where possible instead of page reloads
 		domDiff: true,
-
-		// // Additional files to watch that will trigger server updates
-		// // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
-		// // Works great with a separate bundler writing files to your output folder.
-		// // e.g. `watch: ["_site/**/*.css"]`
-		watch: ["*.css"],
-
-		// Show local network IP addresses for device testing
+		watch: ["src/_includes/scss/style.scss"],
 		showAllHosts: true,
 	});
 
