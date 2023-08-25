@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "eleventy --serve --incremental",
+		"start": "eleventy --watch --incremental",
 		"build": "eleventy",
 		"wpw": "webpack --watch"
 	},
