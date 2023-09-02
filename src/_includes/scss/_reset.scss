@@ -1,6 +1,7 @@
 *,
 *::before,
-*::after {
+*::after,
+.svg-tspan {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -15,16 +16,24 @@ a {
 	color: inherit;
 }
 
-/* Remove list styles (bullets/numbers) */
 ol,
 ul,
 menu {
 	list-style: none;
 }
 
-/* Images have mutable height and width */
-img {
+img,
+.svg-tspan {
 	display: block;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+fieldset {
+	border: none;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
