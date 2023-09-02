@@ -7,6 +7,7 @@
 /* -------------------------------------------------------------------------- */
 
 @mixin typelvl($letter) {
+	font-family: var(--ff-#{$letter});
 	font-size: var(--fs-#{$letter});
 	letter-spacing: var(--ls-#{$letter});
 	line-height: var(--lh-#{$letter});
@@ -39,4 +40,11 @@
 
 @for $gridColEnd from 5 through 13 {
 	@include gridSpan(false, $gridColEnd);
+}
+
+.visually-hidden {
+	display: block;
+	height: 0;
+	width: 0;
+	opacity: 0;
 }
