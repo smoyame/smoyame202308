@@ -46,40 +46,157 @@
 			</g>
 		</svg>
 	</a>
-	<nav class="nav">
-		<ul class="nav__wrapper">
-			<li class="nav__item"><a class="nav__link" href="/#projects" data-cursor-class="arrow">Projects</a></li>
-			<li class="nav__item"><a class="nav__link" href="/experiments" data-cursor-class="arrow">Experiments</a></li>
-			<li class="nav__item"><a class="nav__link" href="/about" data-cursor-class="arrow">About Me</a></li>
-		</ul>
-	</nav>
-	<fieldset class="nav__input">
-		<label for="theme" class="toggle--label">
-			<input type="checkbox" name="theme" id="input-theme" class="toggle--input">
-		</label>
-	</fieldset>
+	<div class="header__content">
+		<input type="checkbox" class="toggle--menu" name="toggle--menu" id="toggle--menu" aria-hidden="true">
+		<div class="content__wrapper">
+			<nav class="nav">
+				<ul class="nav__wrapper">
+					<li class="nav__item"><a class="nav__link" href="/#projects" data-cursor-class="arrow">Projects</a></li>
+					<li class="nav__item"><a class="nav__link" href="/experiments" data-cursor-class="arrow">Experiments</a></li>
+					<li class="nav__item"><a class="nav__link" href="/about" data-cursor-class="arrow">About Me</a></li>
+				</ul>
+			</nav>
+			<fieldset class="theme__input">
+				<input type="checkbox" name="toggle--theme" id="toggle--theme" class="toggle--theme">
+				<label for="toggle--theme" class="toggle--theme--label" onClick="console.log('Checkbox clicked.')" />
+			</fieldset>
+		</div>
+		<label for="toggle--menu" class="toggle--menu--label" aria-hidden="true" />
+	</div>
 </header>
 		<div id="smooth-wrapper">
 			<div id="smooth-content">
 				<main class="main">
 					
 <!-- HERO -->
-<section class="main__hero noevents">
-	<h1 class="main__hero-text">
-		Hero text
-	</h1>
+<section class="section main__hero noevents">
+	<div class="hero__wrapper">
+		<h1 class="main__hero-text level-A">
+			Visual_ Designer who strives to keep giving while growing
+		</h1>
+	</div>
 </section>
 <!-- MY WORK -->
-<h2>projects</h2>
-<!-- ABOUT ME -->
-<h2>About me</h2>
+<section class="section home--projects">
+	<h2 class="visually-hidden">My Projects</h2>
+
+	<svg aria-hidden="true" class="home--work__svg" version="1.1" id="my-work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+		<path clas="svg-circle" d="M100,1c54.6,0,99,44.4,99,99s-44.4,99-99,99S1,154.6,1,100S45.4,1,100,1 M100,0C44.8,0,0,44.8,0,100s44.8,100,100,100
+		s100-44.8,100-100S155.2,0,100,0L100,0z" />
+		<path clas="svg-circle" d="M100,37.2c34.6,0,62.8,28.2,62.8,62.8s-28.2,62.8-62.8,62.8S37.2,134.6,37.2,100S65.4,37.2,100,37.2 M100,36.2
+		c-35.2,0-63.8,28.5-63.8,63.8s28.5,63.8,63.8,63.8s63.8-28.5,63.8-63.8S135.2,36.2,100,36.2L100,36.2z" />
+		<path id="text_x5F_00000090984880270305180130000018231904970996544151_x5F_" d="M181.3,100c0,44.9-36.4,81.3-81.3,81.3 c-44.9,0-81.3-36.4-81.3-81.3S55.1,18.7,100,18.7S181.3,55.1,181.3,100z" fill="none" />
+		<text id="text">
+			<textPath class="svg-tpath" xlink:href="#text_x5F_00000090984880270305180130000018231904970996544151_x5F_" startOffset="-33.4188%">
+				<tspan class="svg-tspan">My Projects - My Work - My Work - My Work - My Work - My Work - My Work - </tspan>
+			</textPath>
+		</text>
+	</svg>
+	<div class="project-gallery">
+		<div class="project-card">
+			<div class="project-card__text project-card__item">
+				<h3 class="name">Project Name</h3>
+				<span class="main-tag">Development</span>
+			</div>
+			<div class="cover project-card__item">
+				<img src="https://placehold.co/600x400/666/31343C" alt="Placeholder image." class="cover-img">
+			</div>
+		</div>
+	</div>
+</section>
 				</main>
 				<footer class="footer">
-	Footer
+	<div class="footer-section icon-fblock">
+		<div class="icon">
+
+		</div>
+	</div>
+	<div class="footer-section link-fblock">
+		<h2 class="ftr-header">Links</h2>
+		<ul class="link-list list-wrapper">
+			<li class="list-item"><a class="link" href="#">Projects</a></li>
+			<li class="list-item"><a class="link" href="#">Experiments</a></li>
+			<li class="list-item"><a class="link" href="#">About Me</a></li>
+		</ul>
+	</div>
+	<div class="footer-section extlink-fblock">
+		<h2 class="ftr-header">Info</h2>
+		<ul class="link-list list-wrapper">
+			<li class="list-item"><a class="link" href="#">LinkedIn</a></li>
+			<li class="list-item"><a class="link" href="#">Email</a></li>
+		</ul>
+	</div>
+	<div class="footer-section attr-fblock">
+		<span class="attribution">&copy; 2023</span>
+	</div>
 </footer>
 			</div>
 		</div>
 	</div>
+	<!--Footer Bar-->
+	<div class="footer__bar">
+	
+	<div class="marquee" >
+		<span class="marquee__txt">DC + Bmore</span>
+		<span class="marquee__txt">stay hydrated + have fun</span>
+		<span class="marquee__txt">Open to more freelance opportunities or strong
+			+ human-centered FT opportunities</span>
+		<span class="marquee__txt">🌈✊🏼♿→²</span>
+		<span class="marquee__txt">I'm updating some details for my website so pardon any of my messes!</span>
+		<span class="marquee__txt">Currently taking <a href="https://eyeondesign.aiga.org/design-often-encourages-the-white-default-how-can-designers-create-more-inclusive-digital-interfaces/" target="_blank">Jacquelyn Ogorchukwu Iyamah's article about "avoiding the white default"</a> to heart</span>
+		<span class="marquee__txt">Remember to check on our friends in Ukraine</span>
+
+	</div>
+	
+	<div class="marquee" aria-hidden="true" >
+		<span class="marquee__txt">DC + Bmore</span>
+		<span class="marquee__txt">stay hydrated + have fun</span>
+		<span class="marquee__txt">Open to more freelance opportunities or strong
+			+ human-centered FT opportunities</span>
+		<span class="marquee__txt">🌈✊🏼♿→²</span>
+		<span class="marquee__txt">I'm updating some details for my website so pardon any of my messes!</span>
+		<span class="marquee__txt">Currently taking <a href="https://eyeondesign.aiga.org/design-often-encourages-the-white-default-how-can-designers-create-more-inclusive-digital-interfaces/" target="_blank">Jacquelyn Ogorchukwu Iyamah's article about "avoiding the white default"</a> to heart</span>
+		<span class="marquee__txt">Remember to check on our friends in Ukraine</span>
+
+	</div>
+	
+	<div class="marquee" aria-hidden="true" >
+		<span class="marquee__txt">DC + Bmore</span>
+		<span class="marquee__txt">stay hydrated + have fun</span>
+		<span class="marquee__txt">Open to more freelance opportunities or strong
+			+ human-centered FT opportunities</span>
+		<span class="marquee__txt">🌈✊🏼♿→²</span>
+		<span class="marquee__txt">I'm updating some details for my website so pardon any of my messes!</span>
+		<span class="marquee__txt">Currently taking <a href="https://eyeondesign.aiga.org/design-often-encourages-the-white-default-how-can-designers-create-more-inclusive-digital-interfaces/" target="_blank">Jacquelyn Ogorchukwu Iyamah's article about "avoiding the white default"</a> to heart</span>
+		<span class="marquee__txt">Remember to check on our friends in Ukraine</span>
+
+	</div>
+	
+	<div class="marquee" aria-hidden="true" >
+		<span class="marquee__txt">DC + Bmore</span>
+		<span class="marquee__txt">stay hydrated + have fun</span>
+		<span class="marquee__txt">Open to more freelance opportunities or strong
+			+ human-centered FT opportunities</span>
+		<span class="marquee__txt">🌈✊🏼♿→²</span>
+		<span class="marquee__txt">I'm updating some details for my website so pardon any of my messes!</span>
+		<span class="marquee__txt">Currently taking <a href="https://eyeondesign.aiga.org/design-often-encourages-the-white-default-how-can-designers-create-more-inclusive-digital-interfaces/" target="_blank">Jacquelyn Ogorchukwu Iyamah's article about "avoiding the white default"</a> to heart</span>
+		<span class="marquee__txt">Remember to check on our friends in Ukraine</span>
+
+	</div>
+	
+	<div class="marquee" aria-hidden="true" >
+		<span class="marquee__txt">DC + Bmore</span>
+		<span class="marquee__txt">stay hydrated + have fun</span>
+		<span class="marquee__txt">Open to more freelance opportunities or strong
+			+ human-centered FT opportunities</span>
+		<span class="marquee__txt">🌈✊🏼♿→²</span>
+		<span class="marquee__txt">I'm updating some details for my website so pardon any of my messes!</span>
+		<span class="marquee__txt">Currently taking <a href="https://eyeondesign.aiga.org/design-often-encourages-the-white-default-how-can-designers-create-more-inclusive-digital-interfaces/" target="_blank">Jacquelyn Ogorchukwu Iyamah's article about "avoiding the white default"</a> to heart</span>
+		<span class="marquee__txt">Remember to check on our friends in Ukraine</span>
+
+	</div>
+	
+</div>
 	<!-- Cursor -->
 	<div id="cursor" aria-hidden="true" data-scroll-sticky>
 		<div class="cursor__circle" aria-hidden="true"></div>
