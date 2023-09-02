@@ -1,29 +1,44 @@
 :root {
 	/* -------------------------------------------------------------------------- */
-	/*                             Type Variables                            */
+	/*                                    Colors                                  */
+	/* -------------------------------------------------------------------------- */
+
+	--main-night: hsl(240, 10%, 15%);
+	--night-glass: hsla(240, 10%, 15%, 0.725);
+	--main-bright: hsl(60, 5%, 95%);
+	--bright-glass: hsla(60, 5%, 95%, 0.725);
+
+	/* -------------------------------------------------------------------------- */
+	/*                                Type Variables                              */
 	/* -------------------------------------------------------------------------- */
 
 	/* Family */
 	--primary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
 	--secondary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
 
+	--ff-A: "Sharp Grotesk Medium 21", Archivo, Helvetica, Arial, sans-serif;
+	--ff-B: var(--primary-type);
+	--ff-C: var(--primary-type);
+	--ff-D: var(--primary-type);
+	--ff-E: var(--primary-type);
 	/* Size */
-	--fs-root: clamp(1.125rem, calc(0.5rem + 0.723vw), calc(0.5rem + 0.723vw));
+	--fs-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
 	--fs-display: var(--fs-root);
-	--fs-A: var(--fs-root);
-	--fs-B: var(--fs-root);
-	--fs-C: var(--fs-root);
+	--fs-A: clamp(31px, calc(1rem + 3.5vw), calc(1rem + 2.785vw));
+	--fs-B: clamp(22px, calc(0.8rem + 1.825vw), calc(0.8rem + 1.825vw));
+	--fs-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
 	--fs-D: var(--fs-root);
 	--fs-E: var(--fs-root);
 
 	/* Weight */
+	--fw-A: 600;
 	--fw-B: 400;
 	--fw-C: 300;
 	--fw-D: 300;
 
 	/* Leading */
 	--lh-display: 0.95;
-	--lh-A: 1;
+	--lh-A: 1.2;
 	--lh-B: 1;
 	--lh-C: 1;
 	--lh-D: 1;
@@ -31,7 +46,7 @@
 
 	/* Tracking */
 	--ls-display: -0.01em;
-	--ls-A: -0.01em;
+	--ls-A: -0.025em;
 	--ls-B: -0.01em;
 	--ls-C: -0.01em;
 	--ls-D: -0.01em;
@@ -43,4 +58,32 @@
 
 	--foreground-color: var(--main-night);
 	--background-color: var(--main-bright);
+	--fg-glass: var(--night-glass);
+	--bg-glass: var(--bright-glass);
+
+	--unit-root: var(--fs-root);
+	--unit-base: calc(var(--fs-root) * 2.5);
+	--unit: calc(var(--unit-base) * 0.5);
+	--unit-A: calc(var(--unit) * 6);
+	--unit-B: calc(var(--unit) * 4);
+	--unit-C: calc(var(--unit) * 3);
+	--unit-D: var(--unit-base);
+	--unit-E: var(--unit);
+	--unit-F: calc(var(--unit) * 0.5);
+
+	// --layout-unit-base: clamp(1rem, calc(0.9rem + 1.5675vw), calc(0.9rem + 1.5675vw));
+	// --layout-unit-A: calc(1rem * var(--layout-unit-base));
+	--layout-unit: clamp(18px, calc(0.75rem + 2vw), calc(0.75rem + 2vw));
+	--base-columns: repeat(12, 1fr);
+
+	/* -------------------------------------------------------------------------- */
+	/*                               Property Units                               */
+	/* -------------------------------------------------------------------------- */
+
+	--ease-curve-A: cubic-bezier(0, 1, 0, 1);
+	--ease-curve-B: cubic-bezier(0, 0.75, 0.25, 1);
+	--blur-strength: calc(var(--unit-E) * 0.5);
+
+	--nav-zIndex: 100;
+	--base-zIndex: 25; /* page content */
 }
