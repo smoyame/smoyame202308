@@ -21,45 +21,54 @@
 	/* -------------------------------------------------------------------------- */
 
 	/* Family */
-	--primary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
-	--secondary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+	--primary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+	--primary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+	--secondary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+	--secondary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+	--tertiary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+	--tertiary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
 
 	--ff-A: var(--primary-type);
 	--ff-B: var(--primary-type);
-	--ff-C: var(--primary-type);
-	--ff-D: var(--secondary-type);
-	--ff-E: var(--secondary-type);
+	--ff-C: var(--secondary-type);
+	--ff-D: var(--secondary-type-B);
+	--ff-E: var(--secondary-type-B);
 	/* Size */
-	--fs-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
-	--fs-display: var(--fs-root);
-	--fs-A: clamp(31px, calc(1rem + 2.785vw), calc(1rem + 2.785vw));
-	--fs-B: clamp(22px, calc(1rem + 1.75vw), calc(1rem + 1.75vw));
-	--fs-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
-	--fs-D: var(--fs-root);
-	--fs-E: var(--fs-root);
+	--fsz-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
+	--fsz-display: var(--fs-root);
+	--fsz-A: clamp(31px, calc(1rem + 2.785vw), calc(1rem + 2.785vw));
+	--fsz-B: clamp(22px, calc(1rem + 1.75vw), calc(1rem + 1.75vw));
+	--fsz-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
+	--fsz-D: var(--fs-root);
+	--fsz-E: var(--fs-root);
 
 	/* Weight */
-	--fw-A: 600;
-	--fw-B: 600;
-	--fw-C: 300;
-	--fw-D: 300;
-	--fw-E: 300;
+	--fw-A: 500;
+	--fw-B: 500;
+	--fw-C: 400;
+	--fw-D: 400;
+	--fw-E: 400;
+
+	/* Stretch */
+	--fst-A: 80%;
+	--fst-B: 80%;
+	--fst-C: 80%;
+	--fst-D: 75%;
+	--fst-E: 75%;
 
 	/* Leading */
-	--lh-display: 0.95;
 	--lh-A: 1.25;
 	--lh-B: 1.2;
 	--lh-C: 1;
 	--lh-D: 1;
-	--lh-E: 1.6;
+	--lh-E: 1.5;
 
 	/* Tracking */
-	--ls-display: -0.01em;
 	--ls-A: -0.0125em;
 	--ls-B: -0.01em;
 	--ls-C: -0.01em;
 	--ls-D: -0.01em;
-	--ls-E: 0.0125em;
+	--ls-E: 0.0105em;
 
 	/* -------------------------------------------------------------------------- */
 	/*                               Set base values                              */
@@ -72,8 +81,8 @@
 	--fg-wisp: var(--night-wisp);
 	--bg-wisp: var(--bright-wisp);
 
-	--unit-root: var(--fs-root);
-	--unit-base: calc(var(--fs-root) * 2.5);
+	--unit-root: var(--fsz-root);
+	--unit-base: calc(var(--fsz-root) * 2.5);
 	--unit: calc(var(--unit-base) * 0.5);
 	--unit-A: calc(var(--unit) * 6);
 	--unit-B: calc(var(--unit) * 4);
@@ -100,5 +109,5 @@
 	--nav-zIndex: 100;
 	--base-zIndex: 25; /* page content */
 
-	--tag-correction: calc(var(--fs-B) / 5); /* project cards */
+	--tag-correction: calc(var(--fsz-B) / 5); /* project cards */
 }
