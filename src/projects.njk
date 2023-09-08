@@ -1,0 +1,107 @@
+---js
+
+{
+  layout: 'base.njk',
+  pagination: {
+    data: 'projects',
+    size: 1,
+    alias: 'p',
+    before: function(pageData, allData) {
+      return pageData.filter((entry)=>entry.live)
+    } 
+  },
+  permalink: "projects/{{ p.title | slugify }}/",
+  eleventyComputed: {
+    title: '{{ p.title }} | Designer | Sami Moya Medina',
+    theme: '{{ p.theme }}'
+  }
+}
+
+---
+
+{% set srcsetWidths = [450, 900, 1200, 1500, 1800] %}
+{% set srcsetSizes = ['(max-width: 400)', '(max-width: 800)', '(max-width: 1100)', '(max-width: 1400)', '(min-width: 1700)'] %}
+
+<section class="section proj__hero hero-container stepA">
+	<div class="hero__copy">
+		<h1 class="hero__title level-A">{{ p.title }}</h1>
+		<div class="hero__question">
+			<h2 class="q-tag overline">SUMMARY</h2>
+			<p class="q-prompt">{{ p.info.prompt }}</p>
+		</div>
+	</div>
+</section>
+<div class="proj__cover stepB">
+	<img class="hero-cover__img" srcset="{% for i in range(0, srcsetWidths.length) %}{{p.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{p.cover.alt}}">
+</div>
+<section class="proj__copy-intro section stepC">
+	<div class="p-copy__wrapper">
+		<div class="p-liveblock p-copy-block">
+			{% if p.location.link %}
+			<span class="p-livetag overline">{{p.location.label}}</span>
+			<a href="{{p.location.link}}" class="p-livelink link">{{p.location.text}} ↗</a>
+			{%endif%}
+		</div>
+		<div class="p-info p-copy-block">
+			<div class="p-desc">
+				{% for graf in p.info.grafs %}
+				<p class="p-desc__graf text__graf">{{ graf }}</p>
+				{%endfor%}
+			</div>
+			<div class="p-attr">
+				<div class="attr__discipline attr-section">
+					<h3 class="overline p-infotag">Disciplines</h3>
+					<ul class="discp_list">
+						{% for tag in p.tags %}
+						<li class="p-discipline">
+							{{tag}}
+						</li>
+						{%endfor%}
+					</ul>
+				</div>
+				<div class="attr__team attr-section">
+					<h3 class="overline p-infotag">Team</h3>
+					<ul class="team_list">
+						{% for person in p.team %}
+						{% if person.length > 1 %}
+						<li class="p-team-member">
+							{{ person }}
+						</li>
+						{%endif%}
+						{% endfor %}
+						<li class="p-team-member">
+							me!
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="p__gallery section stepC">
+	{% for piece in p.content %}
+	{% if piece._type == "mediaBlock" %}
+	<img class="gallery__item gall__image start{{piece.grid.start}} end{{piece.grid.end}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{ piece.item.URL }}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ piece.item.alt }}">
+	{% elif piece._type == "textBlock" %}
+	<div class="gallery__item gall__text-wrapper start{{piece.grid.start}} end{{piece.grid.end}}">
+		{% for graf in piece.text %}
+		<p class="gallery__item text__graf">{{ graf }}</p>
+		{% endfor %}
+	</div>
+	{% elif piece._type == "videoBlock" %}
+	<video class="video gall__video start{{piece.grid.start}} end{{piece.grid.end}}" autoplay="true" muted="true" loop="true">
+		<source src="{{piece.video.URL}}" type="video/mp4">
+		There should be a video here!
+	</video>
+	{% endif %}
+	{% endfor %}
+</section>
+<nav class="proj__nav section stepC">
+	<ul class="proj__nav-wrapper">
+		{% if pagination.href.next %}
+		<li class="proj__nav-item"><a class="proj__nav-link" href="{{pagination.href.next}}" data-cursor-class="arrow"><span class="proj__nav-label proj__nav-item overline">Next</span><span class="proj__nav-name level-A proj__nav-item">{{pagination.page.next.title}}</span></a></li>
+		{% else %}
+		<li class="proj__nav-item"><a class="proj__nav-link" href="{{pagination.href.first}}" data-cursor-class="arrow"><span class="proj__nav-label proj__nav-item overline">Next</span><span class="proj__nav-name level-A proj__nav-item">{{pagination.page.first.title}}</span></a></li>
+		{% endif %}
+	</ul>
+</nav>
