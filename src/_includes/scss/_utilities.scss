@@ -9,9 +9,9 @@
 @mixin typelvl($letter) {
 	font-family: var(--ff-#{$letter});
 	font-size: var(--fs-#{$letter});
+	font-weight: var(--fw-#{$letter});
 	letter-spacing: var(--ls-#{$letter});
 	line-height: var(--lh-#{$letter});
-	font-weight: var(--fw-#{$letter});
 }
 
 .noevents {
@@ -40,6 +40,41 @@
 
 @for $gridColEnd from 5 through 13 {
 	@include gridSpan(false, $gridColEnd);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		translate: 0 var(--unit-D) 0;
+	}
+	85% {
+		translate: 0 0 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn-top {
+	0% {
+		margin-top: -10%;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn-bottom {
+	0% {
+		margin-bottom: -10%;
+		opacity: 0;
+	}
+	100% {
+		margin-bottom: 0;
+		opacity: 1;
+	}
 }
 
 .visually-hidden {
