@@ -1,27 +1,55 @@
-<section class="section home--projects">
-	<h2 class="visually-hidden">My Projects</h2>
+{% set srcsetWidths = [450, 900, 1200, 1500, 1800, 2500] %}
+{% set srcsetSizes = ['(max-width: 400)', '(max-width: 800)', '(max-width: 1100)', '(max-width: 1400)', '(max-width: 2000)', '(min-width: 2001)'] %}
+{% set speedVal = "auto" %}
 
-	<svg aria-hidden="true" class="home--work__svg" version="1.1" id="my-work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-		<path clas="svg-circle" d="M100,1c54.6,0,99,44.4,99,99s-44.4,99-99,99S1,154.6,1,100S45.4,1,100,1 M100,0C44.8,0,0,44.8,0,100s44.8,100,100,100
-		s100-44.8,100-100S155.2,0,100,0L100,0z" />
-		<path clas="svg-circle" d="M100,37.2c34.6,0,62.8,28.2,62.8,62.8s-28.2,62.8-62.8,62.8S37.2,134.6,37.2,100S65.4,37.2,100,37.2 M100,36.2
-		c-35.2,0-63.8,28.5-63.8,63.8s28.5,63.8,63.8,63.8s63.8-28.5,63.8-63.8S135.2,36.2,100,36.2L100,36.2z" />
-		<path id="text_x5F_00000090984880270305180130000018231904970996544151_x5F_" d="M181.3,100c0,44.9-36.4,81.3-81.3,81.3 c-44.9,0-81.3-36.4-81.3-81.3S55.1,18.7,100,18.7S181.3,55.1,181.3,100z" fill="none" />
-		<text id="text">
-			<textPath class="svg-tpath" xlink:href="#text_x5F_00000090984880270305180130000018231904970996544151_x5F_" startOffset="-33.4188%">
-				<tspan class="svg-tspan">My Projects - My Work - My Work - My Work - My Work - My Work - My Work - </tspan>
-			</textPath>
-		</text>
-	</svg>
+<section class="section home--projects stepB" id="projects">
 	<div class="project-gallery">
-		<div class="project-card">
-			<div class="project-card__text project-card__item">
-				<h3 class="name">Project Name</h3>
-				<span class="main-tag">Development</span>
-			</div>
-			<div class="cover project-card__item">
-				<img src="https://placehold.co/600x400/666/31343C" alt="Placeholder image." class="cover-img">
-			</div>
-		</div>
+		<svg aria-hidden="true" class="home--work__svg" version="1.1" id="my-work" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+			<path clas="svg-circle" d="M100,1c54.6,0,99,44.4,99,99s-44.4,99-99,99S1,154.6,1,100S45.4,1,100,1 M100,0C44.8,0,0,44.8,0,100s44.8,100,100,100
+				s100-44.8,100-100S155.2,0,100,0L100,0z" />
+			<path clas="svg-circle" d="M100,37.2c34.6,0,62.8,28.2,62.8,62.8s-28.2,62.8-62.8,62.8S37.2,134.6,37.2,100S65.4,37.2,100,37.2 M100,36.2
+				c-35.2,0-63.8,28.5-63.8,63.8s28.5,63.8,63.8,63.8s63.8-28.5,63.8-63.8S135.2,36.2,100,36.2L100,36.2z" />
+			<path id="text_x5F_00000090984880270305180130000018231904970996544151_x5F_" d="M181.3,100c0,44.9-36.4,81.3-81.3,81.3 c-44.9,0-81.3-36.4-81.3-81.3S55.1,18.7,100,18.7S181.3,55.1,181.3,100z" fill="none" />
+			<text id="text">
+				<textPath class="svg-tpath" xlink:href="#text_x5F_00000090984880270305180130000018231904970996544151_x5F_" startOffset="-33.41%">
+					<tspan class="svg-tspan">My Projects - My Projects - My Projects - My Projects - My Projects - My Projects - My Projects - </tspan>
+				</textPath>
+			</text>
+		</svg>
+		<h2 class="visually-hidden gallery-header">My Projects</h2>
+		<ul class="featured-projects">
+			{% for project in projects %}
+			{% if project.feature == true and project.live == true %}
+			<li class="feature start{{project.grid.start}} end{{project.grid.end}}">
+				<a class="project-card" href="projects/{{ project.title | slugify }}">
+					<div class="project-card__text project-card__item">
+						<h3 class="project-name level-B">{{project.title}}</h3>
+						<span class="main-tag">{{project.tags[0]}}</span>
+					</div>
+					<div class="cover project-card__item">
+						<img srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
+					</div>
+				</a>
+			</li>
+			{%endif%}
+			{%endfor%}
+		</ul>
+	</div>
+	<div class="listed-projects">
+		<h3 class="overline listings-header">More Work</h3>
+		<ul class="archive-wrapper project-archives">
+			{% for project in projects %}
+			{% if project.feature !== true and project.live == true %}
+			<li class="archive-item">
+				<a class="archive-card" href="projects/{{ project.title | slugify }}">
+					<div class="archive-copy">
+						<h3 class="archive-name level-B">{{project.title}}</h3>
+						<span class="archive-tag">{{project.tags[0]}}</span>
+					</div>
+				</a>
+			</li>
+			{%endif%}
+			{%endfor%}
+		</ul>
 	</div>
 </section>
