@@ -40,24 +40,12 @@
 	pointer-events: all;
 	color: var(--background-color);
 	background: var(--fg-glass);
-	border: 1px solid var(--fg-glass);
+	border: var(--border-width) solid var(--fg-glass);
 	border-radius: var(--unit-F);
 	backdrop-filter: blur(var(--blur-strength));
 	opacity: 0;
 	transition: all 750ms var(--ease-curve-A);
 	transform: translateY(1em);
-}
-
-.nav__item:nth-child(3) {
-	transition-delay: 50ms;
-}
-
-.nav__item:nth-child(2) {
-	transition-delay: 100ms;
-}
-
-.nav__item:nth-child(1) {
-	transition-delay: 150ms;
 }
 
 .nav__link {
@@ -67,6 +55,7 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	text-underline-offset: 0.5rem;
+	text-decoration-thickness: var(--border-width);
 	color: var(--background-color);
 }
 
@@ -90,7 +79,7 @@
 	width: var(--unit-A);
 	height: var(--unit-A);
 	border-radius: 50%;
-	border: 1px solid var(--bg-glass);
+	border: var(--border-width) solid var(--bg-glass);
 	backdrop-filter: blur(var(--blur-strength));
 	filter: drop-shadow(0px 4px 10px rgba(121, 121, 121, 0.35));
 	transition: all 750ms var(--ease-curve-B);
@@ -149,10 +138,6 @@
 /* -------------------------------------- */
 /*              Theme Toggle              */
 
-.toggle--theme {
-	display: none;
-}
-
 .toggle--theme--label {
 	pointer-events: all;
 	cursor: pointer;
@@ -175,6 +160,113 @@
 
 .toggle--theme[type="checkbox"]:checked + .toggle--theme--label::after {
 	transform: translateX(100%);
+}
+
+.nav__item .coming-soon,
+.list-item .coming-soon {
+	/* this isn't typical of me, trying to get this site deployed! */
+	pointer-events: none !important;
+	position: relative;
+}
+
+.nav__link.coming-soon::after,
+.link.coming-soon::after {
+	border: none;
+}
+//*footer*//
+.list-wrapper {
+	display: inline-block;
+}
+.link {
+	position: relative;
+}
+.list-item {
+	width: fit-content;
+	margin-block-start: 0.125em;
+	overflow: clip;
+}
+
+/**TODO-place correctly v**/
+
+.coming-soon::before {
+	pointer-events: none;
+	content: "Coming Soon";
+	display: block;
+	position: absolute;
+	width: 100%;
+	background-color: var(--fg-glass);
+	border-radius: var(--border-radius);
+	color: var(--background-color);
+	font-size: 0.75em;
+	outline: 1px solid var(--bg-glass);
+	text-align: center;
+	backdrop-filter: blur(var(--blur-strength));
+
+	top: 0.1em;
+	rotate: -3.25deg;
+	padding: 0 0.25em;
+}
+
+.header .coming-soon::before {
+	pointer-events: none;
+	content: "Coming Soon";
+	display: block;
+	position: absolute;
+	top: 0em;
+	width: 100%;
+	background-color: var(--fg-glass);
+	border-radius: var(--border-radius);
+	color: var(--background-color);
+	font-size: 0.75em;
+	outline: 1px solid var(--bg-glass);
+	text-align: center;
+	backdrop-filter: blur(var(--blur-strength));
+
+	left: 0;
+	padding: 0.5em 0.25em;
+	rotate: 1.25deg;
+	translate: 0 1em;
+}
+
+.footer .coming-soon::before {
+	rotate: 1deg;
+}
+
+@keyframes underline {
+	0% {
+		margin-left: -110%;
+		// opacity: 0;
+	}
+	25% {
+		// opacity: 1;
+	}
+	50% {
+		margin-left: 0%;
+	}
+	75% {
+		// opacity: 1;
+	}
+	100% {
+		margin-left: 220%;
+		// opacity: 0;
+	}
+}
+/**TODO clean this up too**/
+.footer .link {
+	text-decoration: none;
+}
+.footer .link::after {
+	content: "";
+	display: block;
+	width: 110%;
+	height: 0;
+	// opacity: 0;
+	border-top: var(--border-width) solid var(--foreground-color);
+	margin-block-start: 0.125em;
+	background-color: var(--foreground-color);
+}
+.footer .link:hover::after {
+	animation: underline 1.5s ease-in-out infinite;
 }
 
 /*                                                                            */
