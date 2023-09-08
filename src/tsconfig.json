@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"declaration": false
+	},
+	"include": ["**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules", "_fetch/*"],
+	"references": [
+		// declare the dependencies
+		{ "path": "_fetch" }
+	]
+}

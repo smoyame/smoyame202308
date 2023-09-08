@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"outDir": "../_data/",
+		"composite": true
+	},
+	"include": ["**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules"]
+}
