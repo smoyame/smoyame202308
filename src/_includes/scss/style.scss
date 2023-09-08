@@ -1,3 +1,4 @@
+@use "_type";
 @use "_reset";
 @use "_variables" as variable;
 @use "_utilities" as utility;
@@ -242,10 +243,8 @@ p {
 
 .overline {
 	display: block;
-	font-size: 0.95em;
-	font-family: "Sharp Grotesk Medium 21", Archivo, Helvetica, Arial, sans-serif;
+	@include utility.typelvlOverline;
 	text-transform: uppercase;
-	letter-spacing: 0.027em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -447,7 +446,7 @@ p {
 .archive-card::after {
 	content: "↗";
 	margin-top: var(--tag-correction);
-	font-size: calc(var(--fs-B) * 1.25);
+	font-size: calc(var(--fsz-B) * 1.25);
 	line-height: 0.65em;
 }
 
@@ -643,16 +642,21 @@ p {
 .p-attr {
 	display: flex;
 	gap: var(--layout-unit);
+	row-gap: var(--layout-unit);
 	flex-wrap: wrap;
 }
 
 .p-copy__wrapper {
+	row-gap: calc(4 * var(--layout-unit));
+}
+
+.p-copy-block {
 	row-gap: calc(2 * var(--layout-unit));
 }
 
 .p-copy-block {
 	flex: 1 0 calc(((100% - (var(--layout-unit) * 11)) / 12) * 6);
-	min-width: 35ch;
+	min-width: min(32ch, 100%);
 }
 
 .p-livetag,
@@ -664,6 +668,16 @@ p {
 	display: inline-block;
 	line-height: var(--lh-E);
 	margin-inline-end: max(0%, calc(25vw - 8vh));
+}
+
+.p-discipline,
+.p-team-member {
+	margin-bottom: 0.25em;
+}
+
+.discp_list,
+.team_list {
+	opacity: 0.65;
 }
 
 .p-attr {

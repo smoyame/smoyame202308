@@ -1,4 +1,55 @@
 @charset "UTF-8";
+/* -------------------------------------------------------------------------- */
+/*                                  Typefaces                                 */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Medium 21"), local("SharpGroteskMedium-21"), url("./_assets/type/SharpGroteskMedium-21.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 80%;
+}
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Medium 20"), local("SharpGroteskMedium-20"), url("./_assets/type/SharpGroteskBook-20.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 75%;
+}
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Book 21"), local("SharpGroteskBook-21"), url("./_assets/type/SharpGroteskBook-21.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 80%;
+}
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Book 20"), local("SharpGroteskBook-20"), url("_assets/type/SharpGroteskBook-20.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 75%;
+}
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Light 21"), local("SharpGroteskLight-21"), url("_assets/type/SharpGroteskLight-21.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 80%;
+}
+@font-face {
+  font-family: "Sharp Grotesk";
+  src: local("Sharp Grotesk Light 20"), local("SharpGroteskLight-20"), url("/_assets/type/SharpGroteskLight-20.woff2") format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 75%;
+}
 *,
 *::before,
 *::after,
@@ -7,8 +58,9 @@
   margin: 0;
   padding: 0;
   font-weight: unset;
-  font-size: var(--fs-root);
-  font-family: var(--primary-type);
+  font-size: var(--fsz-root);
+  font-family: var(--secondary-type-B);
+  font-weight: 400;
   font-kerning: normal;
 }
 
@@ -74,41 +126,49 @@ textarea {
   /*                                Type Variables                              */
   /* -------------------------------------------------------------------------- */
   /* Family */
-  --primary-type: "Sharp Grotesk Book 21", Archivo, Helvetica, Arial, sans-serif;
-  --secondary-type: "Sharp Grotesk Book 20", Archivo, Helvetica, Arial, sans-serif;
+  --primary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+  --primary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+  --secondary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+  --secondary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+  --tertiary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
+  --tertiary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
   --ff-A: var(--primary-type);
   --ff-B: var(--primary-type);
-  --ff-C: var(--primary-type);
-  --ff-D: var(--secondary-type);
-  --ff-E: var(--secondary-type);
+  --ff-C: var(--secondary-type);
+  --ff-D: var(--secondary-type-B);
+  --ff-E: var(--secondary-type-B);
   /* Size */
-  --fs-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
-  --fs-display: var(--fs-root);
-  --fs-A: clamp(31px, calc(1rem + 2.785vw), calc(1rem + 2.785vw));
-  --fs-B: clamp(22px, calc(1rem + 1.75vw), calc(1rem + 1.75vw));
-  --fs-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
-  --fs-D: var(--fs-root);
-  --fs-E: var(--fs-root);
+  --fsz-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
+  --fsz-display: var(--fs-root);
+  --fsz-A: clamp(31px, calc(1rem + 2.785vw), calc(1rem + 2.785vw));
+  --fsz-B: clamp(22px, calc(1rem + 1.75vw), calc(1rem + 1.75vw));
+  --fsz-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
+  --fsz-D: var(--fs-root);
+  --fsz-E: var(--fs-root);
   /* Weight */
-  --fw-A: 600;
-  --fw-B: 600;
-  --fw-C: 300;
-  --fw-D: 300;
-  --fw-E: 300;
+  --fw-A: 500;
+  --fw-B: 500;
+  --fw-C: 400;
+  --fw-D: 400;
+  --fw-E: 400;
+  /* Stretch */
+  --fst-A: 80%;
+  --fst-B: 80%;
+  --fst-C: 80%;
+  --fst-D: 75%;
+  --fst-E: 75%;
   /* Leading */
-  --lh-display: 0.95;
   --lh-A: 1.25;
   --lh-B: 1.2;
   --lh-C: 1;
   --lh-D: 1;
-  --lh-E: 1.6;
+  --lh-E: 1.5;
   /* Tracking */
-  --ls-display: -0.01em;
   --ls-A: -0.0125em;
   --ls-B: -0.01em;
   --ls-C: -0.01em;
   --ls-D: -0.01em;
-  --ls-E: 0.0125em;
+  --ls-E: 0.0105em;
   /* -------------------------------------------------------------------------- */
   /*                               Set base values                              */
   /* -------------------------------------------------------------------------- */
@@ -118,8 +178,8 @@ textarea {
   --bg-glass: var(--bright-glass);
   --fg-wisp: var(--night-wisp);
   --bg-wisp: var(--bright-wisp);
-  --unit-root: var(--fs-root);
-  --unit-base: calc(var(--fs-root) * 2.5);
+  --unit-root: var(--fsz-root);
+  --unit-base: calc(var(--fsz-root) * 2.5);
   --unit: calc(var(--unit-base) * 0.5);
   --unit-A: calc(var(--unit) * 6);
   --unit-B: calc(var(--unit) * 4);
@@ -140,7 +200,7 @@ textarea {
   --blur-strength: calc(var(--unit-E) * 0.25);
   --nav-zIndex: 100;
   --base-zIndex: 25; /* page content */
-  --tag-correction: calc(var(--fs-B) / 5); /* project cards */
+  --tag-correction: calc(var(--fsz-B) / 5); /* project cards */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -546,7 +606,8 @@ body {
 
 p {
   font-family: var(--ff-E);
-  font-size: var(--fs-E);
+  font-size: var(--fsz-E);
+  font-stretch: var(--fst-E);
   font-weight: var(--fw-E);
   letter-spacing: var(--ls-E);
   line-height: var(--lh-E);
@@ -751,7 +812,8 @@ p {
 /* -------------------------------------------------------------------------- */
 .level-A {
   font-family: var(--ff-A);
-  font-size: var(--fs-A);
+  font-size: var(--fsz-A);
+  font-stretch: var(--fst-A);
   font-weight: var(--fw-A);
   letter-spacing: var(--ls-A);
   line-height: var(--lh-A);
@@ -759,7 +821,8 @@ p {
 
 .level-B {
   font-family: var(--ff-B);
-  font-size: var(--fs-B);
+  font-size: var(--fsz-B);
+  font-stretch: var(--fst-B);
   font-weight: var(--fw-B);
   letter-spacing: var(--ls-B);
   line-height: var(--lh-B);
@@ -767,7 +830,8 @@ p {
 
 .level-C {
   font-family: var(--ff-C);
-  font-size: var(--fs-C);
+  font-size: var(--fsz-C);
+  font-stretch: var(--fst-C);
   font-weight: var(--fw-C);
   letter-spacing: var(--ls-C);
   line-height: var(--lh-C);
@@ -775,7 +839,8 @@ p {
 
 .level-D {
   font-family: var(--ff-D);
-  font-size: var(--fs-D);
+  font-size: var(--fsz-D);
+  font-stretch: var(--fst-D);
   font-weight: var(--fw-D);
   letter-spacing: var(--ls-D);
   line-height: var(--lh-D);
@@ -783,7 +848,8 @@ p {
 
 .level-E {
   font-family: var(--ff-E);
-  font-size: var(--fs-E);
+  font-size: var(--fsz-E);
+  font-stretch: var(--fst-E);
   font-weight: var(--fw-E);
   letter-spacing: var(--ls-E);
   line-height: var(--lh-E);
@@ -791,10 +857,13 @@ p {
 
 .overline {
   display: block;
-  font-size: 0.95em;
-  font-family: "Sharp Grotesk Medium 21", Archivo, Helvetica, Arial, sans-serif;
+  font-family: var(--ff-A);
+  font-size: var(--fsz-root);
+  font-stretch: var(--fst-A);
+  font-weight: var(--fw-A);
+  letter-spacing: var(--ls-E);
+  line-height: var(--lh-C);
   text-transform: uppercase;
-  letter-spacing: 0.027em;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -987,7 +1056,7 @@ p {
 .archive-card::after {
   content: "↗";
   margin-top: var(--tag-correction);
-  font-size: calc(var(--fs-B) * 1.25);
+  font-size: calc(var(--fsz-B) * 1.25);
   line-height: 0.65em;
 }
 
@@ -1177,16 +1246,21 @@ p {
 .p-attr {
   display: flex;
   gap: var(--layout-unit);
+  row-gap: var(--layout-unit);
   flex-wrap: wrap;
 }
 
 .p-copy__wrapper {
+  row-gap: calc(4 * var(--layout-unit));
+}
+
+.p-copy-block {
   row-gap: calc(2 * var(--layout-unit));
 }
 
 .p-copy-block {
   flex: 1 0 calc((100% - var(--layout-unit) * 11) / 12 * 6);
-  min-width: 35ch;
+  min-width: min(32ch, 100%);
 }
 
 .p-livetag,
@@ -1198,6 +1272,16 @@ p {
   display: inline-block;
   line-height: var(--lh-E);
   margin-inline-end: max(0%, 25vw - 8vh);
+}
+
+.p-discipline,
+.p-team-member {
+  margin-bottom: 0.25em;
+}
+
+.discp_list,
+.team_list {
+  opacity: 0.65;
 }
 
 .p-attr {
