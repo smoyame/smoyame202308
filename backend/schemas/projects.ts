@@ -17,8 +17,7 @@ export default {
     },
   ],
   initialValue: {
-    theme: 'night',
-    live: 'true',
+    live: true,
   },
   fields: [
     {
@@ -73,6 +72,42 @@ export default {
         },
       ],
       group: 'copy',
+    },
+    {
+      name: 'location',
+      title: 'Live Project Location',
+      type: 'object',
+      fields: [
+        {
+          name: 'label',
+          title: 'Label Copy',
+          type: 'string',
+          validation: (Rule: any) => Rule.max(25),
+        },
+        {
+          name: 'link',
+          title: 'Live or Archived Link',
+          description: 'The actual URL where your project can be seen in action.',
+          type: 'url',
+          validation: (Rule: any) => [
+            Rule.uri({scheme: ['http', 'https', /:\/\/(?:[a-zA-Z0-9-:.\/_]*)\??/g]}),
+          ],
+        },
+        {
+          name: 'text',
+          title: 'Link Copy',
+          description: 'The text that people will click on be taken to the project.',
+          type: 'string',
+          validation: (Rule: any) => Rule.max(100),
+        },
+      ],
+    },
+    {
+      name: 'team',
+      title: 'Project Team',
+      type: 'array',
+      of: [{type: 'string'}],
+      group: ['copy'],
     },
     {
       name: 'tags',
