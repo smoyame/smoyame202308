@@ -8,10 +8,20 @@
 
 @mixin typelvl($letter) {
 	font-family: var(--ff-#{$letter});
-	font-size: var(--fs-#{$letter});
+	font-size: var(--fsz-#{$letter});
+	font-stretch: var(--fst-#{$letter});
 	font-weight: var(--fw-#{$letter});
 	letter-spacing: var(--ls-#{$letter});
 	line-height: var(--lh-#{$letter});
+}
+
+@mixin typelvlOverline {
+	font-family: var(--ff-A);
+	font-size: var(--fsz-root);
+	font-stretch: var(--fst-A);
+	font-weight: var(--fw-A);
+	letter-spacing: var(--ls-E);
+	line-height: var(--lh-C);
 }
 
 .noevents {
