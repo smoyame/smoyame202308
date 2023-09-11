@@ -11,10 +11,12 @@
 
 	--rgb-accent: 20, 20, 117;
 
+	--glass-opacity: 0.895;
+
 	--main-night: hsl(240, 10%, 14%);
 	--night-glass: hsla(240, 10%, 20%, 0.725);
-	--main-bright: hsl(9, 26%, 95%);
-	--bright-glass: hsla(9, 26%, 95%, 0.725);
+	--main-bright: hsl(300, 6%, 93%);
+	--bright-glass: hsla(300, 6%, 93%, 0.725);
 
 	/* -------------------------------------------------------------------------- */
 	/*                                Type Variables                              */
@@ -34,11 +36,10 @@
 	--ff-D: var(--secondary-type-B);
 	--ff-E: var(--secondary-type-B);
 	/* Size */
-	--fsz-root: clamp(1rem, calc(0.25rem + 0.792vw), calc(0.5rem + 0.723vw));
-	--fsz-display: var(--fs-root);
+	--fsz-root: clamp(1rem, calc(0.25rem + 0.7925vw), calc(0.5rem + 0.723vw));
 	--fsz-A: clamp(31px, calc(1rem + 2.785vw), calc(1rem + 2.785vw));
 	--fsz-B: clamp(22px, calc(1rem + 1.75vw), calc(1rem + 1.75vw));
-	--fsz-C: clamp(17px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
+	--fsz-C: clamp(19px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
 	--fsz-D: var(--fs-root);
 	--fsz-E: var(--fs-root);
 
@@ -64,9 +65,9 @@
 	--lh-E: 1.5;
 
 	/* Tracking */
-	--ls-A: -0.0125em;
-	--ls-B: -0.01em;
-	--ls-C: -0.01em;
+	--ls-A: -0.025em;
+	--ls-B: -0.0275em;
+	--ls-C: 0.01em;
 	--ls-D: -0.01em;
 	--ls-E: 0.0105em;
 
@@ -78,8 +79,6 @@
 	--background-color: var(--main-bright);
 	--fg-glass: var(--night-glass);
 	--bg-glass: var(--bright-glass);
-	--fg-wisp: var(--night-wisp);
-	--bg-wisp: var(--bright-wisp);
 
 	--unit-root: var(--fsz-root);
 	--unit-base: calc(var(--fsz-root) * 2.5);
@@ -110,4 +109,6 @@
 	--base-zIndex: 25; /* page content */
 
 	--tag-correction: calc(var(--fsz-B) / 5); /* project cards */
+
+	--global-delay: 400ms;
 }
