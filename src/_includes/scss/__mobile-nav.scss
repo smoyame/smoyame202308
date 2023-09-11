@@ -13,13 +13,6 @@
 	pointer-events: none;
 }
 
-.toggle--menu::after {
-	background: var(--bg-glass);
-	opacity: 0;
-	transition: opacity 300ms var(--ease-curve-B);
-	pointer-events: none;
-}
-
 .toggle--menu:checked::after {
 	opacity: 1;
 	pointer-events: all;
@@ -28,12 +21,6 @@
 .content__wrapper,
 .nav__wrapper {
 	gap: var(--unit-F);
-}
-
-.theme__input::before {
-	content: "🌙 ";
-	margin-block-start: 0.15rem;
-	margin-inline-end: 0.25rem;
 }
 
 .nav__item {
@@ -162,6 +149,16 @@
 	transform: translateX(100%);
 }
 
+.theme__input::after {
+	content: "";
+	display: block;
+	height: 1.75rem;
+	aspect-ratio: 1;
+	border-radius: 99rem;
+	background-color: var(--foreground-color);
+	margin-inline-start: 0.5rem;
+}
+
 .nav__item .coming-soon,
 .list-item .coming-soon {
 	/* this isn't typical of me, trying to get this site deployed! */
@@ -194,34 +191,19 @@
 	display: block;
 	position: absolute;
 	width: 100%;
-	background-color: var(--fg-glass);
+	background-color: var(--foreground-color);
 	border-radius: var(--border-radius);
 	color: var(--background-color);
 	font-size: 0.75em;
-	outline: 1px solid var(--bg-glass);
+	box-shadow: 0px 2px 2px var(--bg-glass);
 	text-align: center;
-	backdrop-filter: blur(var(--blur-strength));
-
 	top: 0.1em;
 	rotate: -3.25deg;
 	padding: 0 0.25em;
 }
 
 .header .coming-soon::before {
-	pointer-events: none;
-	content: "Coming Soon";
-	display: block;
-	position: absolute;
 	top: 0em;
-	width: 100%;
-	background-color: var(--fg-glass);
-	border-radius: var(--border-radius);
-	color: var(--background-color);
-	font-size: 0.75em;
-	outline: 1px solid var(--bg-glass);
-	text-align: center;
-	backdrop-filter: blur(var(--blur-strength));
-
 	left: 0;
 	padding: 0.5em 0.25em;
 	rotate: 1.25deg;
@@ -235,20 +217,12 @@
 @keyframes underline {
 	0% {
 		margin-left: -110%;
-		// opacity: 0;
-	}
-	25% {
-		// opacity: 1;
 	}
 	50% {
 		margin-left: 0%;
 	}
-	75% {
-		// opacity: 1;
-	}
 	100% {
-		margin-left: 220%;
-		// opacity: 0;
+		margin-left: 110%;
 	}
 }
 /**TODO clean this up too**/
@@ -264,9 +238,6 @@
 	border-top: var(--border-width) solid var(--foreground-color);
 	margin-block-start: 0.125em;
 	background-color: var(--foreground-color);
-}
-.footer .link:hover::after {
-	animation: underline 1.5s ease-in-out infinite;
 }
 
 /*                                                                            */
