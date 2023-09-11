@@ -4,10 +4,19 @@ title: 'About Me | Digital Designer | Sami Moya Medina'
 ---
 
 <section class="section about__intro stepA">
-	<h1 class="about__intro-heading">Sami - Digital Designer</h1>
+	<h1 class="about__intro-heading">
+		<span class="abt_name-block">
+			<span class="overline name-label">First Name</span>
+			<span class="level-E abt-name subtle">Samanta</span>
+		</span>
+		<span class="abt_name-block">
+			<span class="overline name-label">Last Name</span>
+			<span class="level-E abt-name subtle">Moya Medina</span>
+		</span>
+	</h1>
 	<div class="about__intro-copy">
 		{% for graf in about.pageGrafs %}
-		<p class="about__graf level-A">{{ graf }}</p>
+		<p class="about__graf">{{ graf }}</p>
 		{% endfor %}
 	</div>
 </section>
@@ -17,7 +26,7 @@ title: 'About Me | Digital Designer | Sami Moya Medina'
 		<ul class="exp__list">
 			<li class="exp__item">
 				<h3 class="exp__item-heading"><span class="exp__item-heading__org overline">Contract & Freelance Clients</span> Torres for San Mateo, PAWS Animal Shelter, MissionWired & Chapman Cubine Allen + Hussey, individual designers, independent software engineers and more.</h3>
-				<p class="exp__item-dates level-E">
+				<p class="exp__item-dates level-E subtle">
 					2021.09
 					&ndash;
 					Present<br>
@@ -31,9 +40,9 @@ title: 'About Me | Digital Designer | Sami Moya Medina'
 
 			<li class="exp__item">
 
-				<h3 class="exp__item-heading overline"><span class="exp__item-heading__org">{{ organization }},</span> {{ subheading }}</h3>
+				<h3 class="exp__item-heading"><span class="exp__item-heading__org">{{ organization }},</span> {{ subheading }}</h3>
 
-				<p class="exp__item-dates level-E">
+				<p class="exp__item-dates level-E subtle">
 					{{ exp.dates.start | replace("-", ".") | truncate(7, true, "") }}
 					&ndash;
 					{{ exp.dates.end | replace("-", ".") | truncate(7, true, "") }}<br>
