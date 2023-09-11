@@ -51,7 +51,7 @@
 			<div class="p-attr">
 				<div class="attr__discipline attr-section">
 					<h3 class="overline p-infotag">Disciplines</h3>
-					<ul class="discp_list">
+					<ul class="discp_list subtle">
 						{% for tag in p.tags %}
 						<li class="p-discipline">
 							{{tag}}
@@ -61,7 +61,7 @@
 				</div>
 				<div class="attr__team attr-section">
 					<h3 class="overline p-infotag">Team</h3>
-					<ul class="team_list">
+					<ul class="team_list subtle">
 						{% for person in p.team %}
 						{% if person.length > 1 %}
 						<li class="p-team-member">
