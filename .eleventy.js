@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "./src/_includes/scss/style.css": "style.css" });
 	eleventyConfig.addPassthroughCopy("src/_assets");
 	eleventyConfig.addPassthroughCopy("src/.htaccess");
+	eleventyConfig.addPassthroughCopy("src/*.js");
 
 	return {
 		dir: {
