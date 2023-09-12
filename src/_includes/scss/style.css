@@ -605,8 +605,8 @@ html {
 }
 
 [data-color-flavor=vibes] {
-  --main-night: hsl(276, 56%, 35%);
-  --night-glass: hsla(276, 56%, 35%, var(--glass-opacity));
+  --main-night: hsl(255, 97%, 70%);
+  --night-glass: hsla(255, 97%, 70%, var(--glass-opacity));
 }
 
 [data-color-flavor=studious] {
