@@ -605,7 +605,7 @@ html {
 }
 
 [data-color-flavor=vibes] {
-  --main-night: hsl(255, 97%, 70%);
+  --main-night: hsl(255, 90%, 60%);
   --night-glass: hsla(255, 97%, 70%, var(--glass-opacity));
 }
 
