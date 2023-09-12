@@ -20,18 +20,18 @@ let scheme;
 /* -------------------------------------------------------------------------- */
 
 if (
-	(hasDarkMode.matches && sessionStorage.scheme == "undefined") ||
+	(hasDarkMode.matches && sessionStorage.scheme == undefined) ||
 	sessionStorage.scheme == "dark"
 ) {
 	defaultScheme = "dark";
 	altScheme = "light";
 } else if (
-	(!hasDarkMode.matches && sessionStorage.scheme == "undefined") ||
+	(!hasDarkMode.matches && sessionStorage.scheme == undefined) ||
 	sessionStorage.scheme == "light"
 ) {
 	defaultScheme = "light";
 	altScheme = "dark";
-} else if (sessionStorage.scheme || sessionStorage.scheme !== "undefined") {
+} else if (sessionStorage.scheme || sessionStorage.scheme !== undefined) {
 	defaultScheme = sessionStorage.scheme;
 	altScheme = sessionStorage.oppositeScheme;
 }
