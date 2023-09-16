@@ -600,13 +600,13 @@ html {
 }
 
 [data-color-flavor=alertness] {
-  --main-night: hsl(0, 100%, 40%);
-  --night-glass: hsla(0, 100%, 40%, var(--glass-opacity));
+  --main-night: hsl(0, 70%, 45%);
+  --night-glass: hsla(0, 70%, 45%, var(--glass-opacity));
 }
 
 [data-color-flavor=vibes] {
-  --main-night: hsl(276, 56%, 35%);
-  --night-glass: hsla(276, 56%, 35%, var(--glass-opacity));
+  --main-night: hsl(258, 61%, 51%);
+  --night-glass: hsla(255, 97%, 70%, var(--glass-opacity));
 }
 
 [data-color-flavor=studious] {
@@ -615,8 +615,8 @@ html {
 }
 
 [data-color-flavor=confident] {
-  --main-night: hsl(249, 92%, 36%);
-  --night-glass: hsla(249, 92%, 36%, var(--glass-opacity));
+  --main-night: hsl(225, 84%, 45%);
+  --night-glass: hsla(225, 85%, 48%, var(--glass-opacity));
 }
 
 body,

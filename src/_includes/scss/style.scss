@@ -27,12 +27,12 @@ html {
 }
 
 [data-color-flavor="alertness"] {
-	--main-night: hsl(0, 100%, 40%);
-	--night-glass: hsla(0, 100%, 40%, var(--glass-opacity));
+	--main-night: hsl(0, 70%, 45%);
+	--night-glass: hsla(0, 70%, 45%, var(--glass-opacity));
 }
 
 [data-color-flavor="vibes"] {
-	--main-night: hsl(255, 90%, 60%);
+	--main-night: hsl(258, 61%, 51%);
 	--night-glass: hsla(255, 97%, 70%, var(--glass-opacity));
 }
 
@@ -42,7 +42,7 @@ html {
 }
 
 [data-color-flavor="confident"] {
-	--main-night: hsl(225, 85%, 48%);
+	--main-night: hsl(225, 84%, 45%);
 	--night-glass: hsla(225, 85%, 48%, var(--glass-opacity));
 }
 
