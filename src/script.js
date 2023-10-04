@@ -1,4 +1,3 @@
-// Temp.  Typescript use later.
 const themeInput = document.querySelector("#toggle--theme");
 const smileySVG = document.querySelector(".footer-svg");
 
@@ -14,10 +13,6 @@ let oppositeScheme;
 let flavor;
 let defaultFlavor;
 let scheme;
-
-/* -------------------------------------------------------------------------- */
-/*                                   Scheme                                   */
-/* -------------------------------------------------------------------------- */
 
 if (
 	(hasDarkMode.matches && sessionStorage.scheme == undefined) ||
@@ -52,9 +47,7 @@ const swapScheme = () => {
 
 themeInput.addEventListener("change", swapScheme);
 
-/* -------------------------------------------------------------------------- */
-/*                                   Flavor                                   */
-/* -------------------------------------------------------------------------- */
+
 let altFlavors = ["alertness", "vibes", "studious", "confident", "default"];
 let place;
 
@@ -77,8 +70,3 @@ smileySVG.addEventListener("click", () => {
 	place = (place + 1) % altFlavors.length;
 });
 
-// will be adding different schemes in the future
-
-/* -------------------------------------------------------------------------- */
-/*                                   Storage                                  */
-/* -------------------------------------------------------------------------- */
