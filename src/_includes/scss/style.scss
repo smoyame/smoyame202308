@@ -915,11 +915,12 @@ p {
 }
 
 .experiments__card {
-	flex: 1 0 min(27ch, 100%);
+	flex: 1 0 min(30ch, 100%);
 	gap: var(--layout-unit);
 	margin-bottom: calc(2 * var(--layout-unit));
 }
 
+.exp-heading,
 .exp__copy-title {
 	margin-block-end: var(--unit-F);
 }
@@ -927,7 +928,6 @@ p {
 .exp__copy-info {
 	font-weight: 400;
 	margin-block-end: var(--unit-E);
-	color: var(--fg-glass);
 }
 
 @media (min-width: 970px) {
