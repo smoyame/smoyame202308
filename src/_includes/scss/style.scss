@@ -3,10 +3,10 @@
 @use "_variables" as variable;
 @use "_utilities" as utility;
 @use "__mobile-nav";
+
 /* -------------------------------------------------------------------------- */
 /*                                   Basics                                   */
 /* -------------------------------------------------------------------------- */
-
 html {
 	transition: all 2s ease;
 }
@@ -192,7 +192,6 @@ p {
 }
 
 /* Z-Index */
-
 .home--work__svg {
 	z-index: 10;
 }
@@ -259,7 +258,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                                 Typesetting                                */
 /* -------------------------------------------------------------------------- */
-
 .level-A {
 	@include utility.typelvl(A);
 }
@@ -293,7 +291,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                             ## Overall Wrapper                             */
 /* -------------------------------------------------------------------------- */
-
 .body {
 	opacity: 0;
 	animation: fadeInStatic 1s var(--ease-curve-B) forwards;
@@ -303,7 +300,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                                  ## Header                                 */
 /* -------------------------------------------------------------------------- */
-
 .header {
 	pointer-events: none;
 }
@@ -349,7 +345,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                                 Main - Hero                                */
 /* -------------------------------------------------------------------------- */
-
 .main__hero-text {
 	max-width: 23ch;
 	justify-content: center;
@@ -365,11 +360,11 @@ p {
 /*                               Main - Projects                              */
 /* -------------------------------------------------------------------------- */
 /* SVG Graphic */
-
 @keyframes simpleSpin {
 	0% {
 		rotate: 0deg;
 	}
+
 	100% {
 		rotate: 360deg;
 	}
@@ -405,7 +400,6 @@ p {
 }
 
 /* Featured Project Cards */
-
 .project-gallery {
 	padding-block-end: var(--layout-unit);
 	scroll-padding-block-start: var(--unit-A);
@@ -452,7 +446,6 @@ p {
 }
 
 /* Archived Project List */
-
 .listed-projects {
 	margin-block: var(--unit-B);
 }
@@ -467,7 +460,6 @@ p {
 	flex-direction: row;
 	justify-content: space-between;
 	padding-block: calc(var(--unit-F) * 1.5);
-
 	transition: all 150ms var(--ease-curve-B);
 }
 
@@ -521,7 +513,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                                 ## Footer                                  */
 /* -------------------------------------------------------------------------- */
-
 .footer,
 .footer-content,
 .footer-sub-section {
@@ -601,7 +592,6 @@ p {
 
 /* -------------------------------------------------------------------------- */
 /*                                 FOOTER BAR                                 */
-
 @keyframes marquee-anim {
 	0% {
 		transform: translateX(0%);
@@ -645,7 +635,6 @@ p {
 /* -------------------------------------------------------------------------- */
 /*                          ##  Project Page - Indiv                          */
 /* -------------------------------------------------------------------------- */
-
 .proj__hero {
 	display: flex;
 	align-items: end;
@@ -763,14 +752,12 @@ p {
 
 /* -------------------------------------------------------------------------- */
 /*                                Proj Gallery                                */
-
 .gallery__item:not(p) {
 	margin-block-end: var(--layout-unit);
 }
 
 /* -------------------------------------------------------------------------- */
 /*                             Proj Pagination Nav                            */
-
 .proj__nav-wrapper {
 	display: flex;
 	width: 100%;
@@ -819,11 +806,9 @@ p {
 
 /* -------------------------------------------------------------------------- */
 /*                              Indiv About Page                              */
-
 /* -------------------------------------------------------------------------- */
 /*                              INDIV ABOUT PAGE                              */
 /* -------------------------------------------------------------------------- */
-
 .about__intro,
 .about__experience {
 	padding-bottom: var(--unit-A);
@@ -913,14 +898,42 @@ p {
 	margin-bottom: 0;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                 !!! Desktop                                */
-/* -------------------------------------------------------------------------- */
+.experiments__hero {
+	padding-block-start: calc(2.25*var(--unit-A));
+}
+
+.experiments__gallery {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--layout-unit);
+}
+
+.experiments__card,
+.card-copy {
+	display: flex;
+	flex-direction: column;
+}
+
+.experiments__card {
+	flex: 1 0 min(27ch, 100%);
+	gap: var(--layout-unit);
+	margin-bottom: calc(2 * var(--layout-unit));
+}
+
+.exp__copy-title {
+	margin-block-end: var(--unit-F);
+}
+
+.exp__copy-info {
+	font-weight: 400;
+	margin-block-end: var(--unit-E);
+	color: var(--fg-glass);
+}
 
 @media (min-width: 970px) {
+
 	/* -------------------------------------------------------------------------- */
 	/*                                  !! Header                                 */
-
 	.header__content,
 	.toggle--menu,
 	.toggle--menu--label,
@@ -929,6 +942,7 @@ p {
 	.toggle--theme--label {
 		position: static;
 	}
+
 	.toggle--menu::after,
 	.toggle--menu--label::before,
 	.toggle--menu--label::after {
@@ -1002,7 +1016,6 @@ p {
 		display: block;
 		width: 110%;
 		height: 0;
-		// opacity: 0;
 		border-top: var(--border-width) solid var(--foreground-color);
 		margin-block-start: 0.125em;
 		background-color: var(--foreground-color);
@@ -1042,7 +1055,6 @@ p {
 	/* -------------------------------------------------------------------------- */
 	/*                              !!! Home - Projs                              */
 	/* -------------------------------------------------------------------------- */
-
 	.home--work__svg {
 		position: static;
 		translate: -50% -50%;
@@ -1081,7 +1093,6 @@ p {
 
 	/* -------------------------------------------------------------------------- */
 	/*                               !! Project Page                              */
-
 	.hero__copy {
 		display: grid;
 		grid-template-columns: var(--base-columns);
@@ -1104,14 +1115,12 @@ p {
 
 	/* -------------------------------------------------------------------------- */
 	/*                          !! Project Pagination Nav                         */
-
 	.proj__nav {
 		justify-content: end;
 	}
 
 	/* -------------------------------------------------------------------------- */
 	/*                          !!  INDIV ABOUT PAGE                              */
-
 	.about__exp-wrapper {
 		display: grid;
 	}
@@ -1119,11 +1128,9 @@ p {
 	/* -------------------------------------------------------------------------- */
 	/*                                 !!! Footer                                 */
 	/* -------------------------------------------------------------------------- */
-
 	/* -------------------------------------------------------------------------- */
 	/*                               !!! Footer bar                               */
 	/* -------------------------------------------------------------------------- */
-
 	.footer__bar {
 		padding-block: var(--unit-A) var(--unit-C);
 	}
