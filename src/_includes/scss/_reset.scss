@@ -17,8 +17,13 @@ a {
 	color: inherit;
 }
 
-a {
+a:not(.header, .footer) {
 	text-underline-offset: 0.25em;
+}
+
+p a:is(:hover, :focus, :active) {
+	background: var(--foreground-color);
+	color: var(--background-color);
 }
 
 ol,
