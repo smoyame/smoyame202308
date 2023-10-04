@@ -3,16 +3,25 @@ title: 'Digital Designer | Sami Moya Medina'
 layout: 'base.njk'
 ---
 
-<section class="experiments">
-	<h1>Experiments</h1>
+{% set srcsetWidths = [450, 900, 1200, 1500, 1800] %}
+{% set srcsetSizes = ['(max-width: 400)', '(max-width: 800)', '(max-width: 1100)', '(max-width: 1400)', '(min-width: 1700)'] %}
+
+<section class="section experiments__hero stepA">
+	<h1 class="exp-heading level-A">Experiments</h1>
+	<p>Stuff I've made during some free time, for very old projects, or just because I was curious.</p>
+</section>
+
+<section class="section experiments stepA">
 	<ul class="experiments__gallery">
+		{% for piece in experiments %}
 		<li class="experiments__card">
-			<img src="" alt="Placeholder">
+			<img alt="{{piece.image.alt}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{piece.image.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}">
 			<div class="card-copy">
-				<h2 class="level-C">Experiment Title Here</h2>
-				<p class="overline">Medium of Thing</p>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolore, nam blanditiis obcaecati nisi dolorum unde, nesciunt modi quisquam eaque aliquid iure soluta? Tempora itaque natus alias dolor animi inventore!</p>
+				<h2 class="exp__copy-title level-C">{{piece.title}}</h2>
+				<p class="exp__copy-info overline subtle">{{piece.medium}}</p>
+				{% if piece.description %}<p class="exp__copy-graf">{{piece.description}}</p>{% endif %}
 			</div>
 		</li>
+		{% endfor %}
 	</ul>
 </section>
