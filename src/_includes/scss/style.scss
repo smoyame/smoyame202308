@@ -245,7 +245,6 @@ p {
 }
 
 .gall__image {
-	min-height: 100%;
 	object-fit: cover;
 	object-position: center;
 }
@@ -748,12 +747,6 @@ p {
 
 .p-team-member:not(:only-child):last-child:before {
 	content: "\2026 and ";
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                Proj Gallery                                */
-.gallery__item:not(p) {
-	margin-block-end: var(--layout-unit);
 }
 
 /* -------------------------------------------------------------------------- */
