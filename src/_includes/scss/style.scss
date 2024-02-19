@@ -348,7 +348,12 @@ p {
 	max-width: 23ch;
 	justify-content: center;
 	padding-block-start: calc(var(--unit-A) * 1.8);
-	// min-height: unset;
+}
+
+.main__hero-caption {
+	display: block;
+	width: min(27.5rem, 80%);
+	margin-block: var(--unit-D) var(--unit-C);
 }
 
 .home--projects {
@@ -392,10 +397,6 @@ p {
 	font-size: 17px;
 	text-transform: uppercase;
 	letter-spacing: 0.115em;
-}
-
-.home--projects {
-	padding-top: calc(var(--unit-A) * 1.5);
 }
 
 /* Featured Project Cards */
@@ -1043,6 +1044,14 @@ p {
 
 	.toggle--theme--label {
 		aspect-ratio: 1 / 2;
+	}
+
+	/* -------------------------------------------------------------------------- */
+	/*                              !!! Home - hero                              */
+	/* -------------------------------------------------------------------------- */
+	.main__hero-caption {
+		margin-left: auto;
+		margin-block: 10rem 0;
 	}
 
 	/* -------------------------------------------------------------------------- */
