@@ -89,7 +89,7 @@
 		{% endfor %}
 	</div>
 	{% elif piece._type == "videoBlock" %}
-	<video class="video gall__video start{{piece.grid.start}} end{{piece.grid.end}}" autoplay="true" muted="true" loop="true">
+	<video class="video gallery__item gall__video start{{piece.grid.start}} end{{piece.grid.end}}" autoplay="true" muted="true" loop="true">
 		<source src="{{piece.video.URL}}" type="video/mp4">
 		There should be a video here!
 	</video>
