@@ -837,6 +837,10 @@ p {
   border-radius: var(--border-radius);
 }
 
+.gall__video {
+  display: block;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 Typesetting                                */
 /* -------------------------------------------------------------------------- */
@@ -963,6 +967,12 @@ p {
   padding-block-start: calc(var(--unit-A) * 1.8);
 }
 
+.main__hero-caption {
+  display: block;
+  width: min(27.5rem, 80%);
+  margin-block: var(--unit-D) var(--unit-C);
+}
+
 .home--projects {
   padding-top: 0;
 }
@@ -1002,10 +1012,6 @@ p {
   font-size: 17px;
   text-transform: uppercase;
   letter-spacing: 0.115em;
-}
-
-.home--projects {
-  padding-top: calc(var(--unit-A) * 1.5);
 }
 
 /* Featured Project Cards */
@@ -1089,11 +1095,11 @@ p {
 .archive-item:hover,
 .archive-item:focus-within,
 :is(.archive-item:hover, .archive-item:focus-within) + .archive-item {
-  border-top: none;
+  border-top-color: var(--background-color);
 }
 
 .archive-item:hover {
-  border-bottom: none;
+  border-bottom-color: var(--background-color);
 }
 
 .archive-card::after {
@@ -1353,6 +1359,12 @@ p {
 
 .p-team-member:not(:only-child):last-child:before {
   content: "…and ";
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Proj Gallery                                */
+.gallery__item:not(p) {
+  margin-block-end: var(--layout-unit);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1629,6 +1641,13 @@ p {
     aspect-ratio: 1/2;
   }
   /* -------------------------------------------------------------------------- */
+  /*                              !!! Home - hero                              */
+  /* -------------------------------------------------------------------------- */
+  .main__hero-caption {
+    margin-left: auto;
+    margin-block: 10rem 0;
+  }
+  /* -------------------------------------------------------------------------- */
   /*                              !!! Home - Projs                              */
   /* -------------------------------------------------------------------------- */
   .home--work__svg {
@@ -1654,8 +1673,14 @@ p {
   .featured-projects {
     grid-column: 1/-1;
   }
+  .featured-projects {
+    grid-auto-flow: row dense;
+  }
   .feature {
     display: block;
+  }
+  .feature:nth-child(2) {
+    align-self: end;
   }
   .listed-projects {
     grid-column: 2/span 8;
@@ -1677,6 +1702,9 @@ p {
     display: grid;
     grid-template-columns: var(--base-columns);
     gap: var(--layout-unit);
+  }
+  .gallery__item:not(p) {
+    margin-block-end: 0;
   }
   /* -------------------------------------------------------------------------- */
   /*                          !! Project Pagination Nav                         */
