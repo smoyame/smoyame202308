@@ -481,11 +481,11 @@ p {
 .archive-item:hover,
 .archive-item:focus-within,
 :is(.archive-item:hover, .archive-item:focus-within) + .archive-item {
-	border-top: none;
+	border-top-color: var(--background-color);
 }
 
 .archive-item:hover {
-	border-bottom: none;
+	border-bottom-color: var(--background-color);
 }
 
 .archive-card::after {
