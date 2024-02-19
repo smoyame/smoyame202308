@@ -1085,8 +1085,16 @@ p {
 		grid-column: 1 / -1;
 	}
 
+	.featured-projects {
+		grid-auto-flow: row dense;
+	}
+
 	.feature {
 		display: block;
+	}
+
+	.feature:nth-child(2) {
+		align-self: end;
 	}
 
 	.listed-projects {
