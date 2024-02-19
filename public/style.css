@@ -970,11 +970,12 @@ p {
 .main__hero-caption {
   display: block;
   width: min(27.5rem, 80%);
-  margin-block: var(--unit-D) var(--unit-C);
+  margin-block: var(--unit-D) calc(var(--unit-C) * 1.5);
 }
 
 .home--projects {
   padding-top: 0;
+  scroll-margin-top: 8rem;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1668,6 +1669,9 @@ p {
     display: grid;
     gap: var(--layout-unit);
     grid-template-columns: var(--base-columns);
+  }
+  .home--projects {
+    scroll-margin-top: 16rem;
   }
   .project-gallery,
   .featured-projects {
