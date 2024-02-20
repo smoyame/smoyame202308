@@ -903,7 +903,7 @@ p {
 }
 
 .subtle {
-  opacity: 0.65;
+  opacity: 0.625;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1447,6 +1447,14 @@ p {
   gap: var(--layout-unit);
 }
 
+.about__subheading {
+  margin-bottom: var(--unit-F);
+}
+
+.about__subheading + p {
+  width: min(42ch, 100%);
+}
+
 .abt_name-block {
   display: block;
 }
@@ -1461,7 +1469,8 @@ p {
 }
 
 .about__intro {
-  padding-top: 42vh;
+  padding-block-start: calc(2.25 * var(--unit-A));
+  padding-bottom: 0;
 }
 
 .about__graf {
@@ -1473,19 +1482,78 @@ p {
   line-height: 1.4;
 }
 
-.about__exp-wrapper {
-  grid-template-columns: repeat(8, 1fr);
+.about__conf {
+  padding-block: var(--unit-C);
+}
+
+.about__conf-wrapper {
+  grid-column: 7/-1;
   gap: var(--layout-unit);
 }
 
-.exp__heading {
+.about__conf-heading {
+  margin-bottom: 1em;
+}
+
+.conf__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--unit-F);
+}
+
+.conf__card,
+.conf__item:last-of-type {
+  display: block;
+  padding: calc(var(--unit-F) * 1.125) var(--unit-E) var(--unit-F);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: all 500ms var(--ease-curve-B);
+}
+
+.conf__item:not(:last-of-type) .conf__card {
+  background-color: var(--fg-glass);
+  color: var(--background-color);
+}
+
+.conf__item:last-of-type {
+  border-color: var(--foreground-color);
+}
+
+.conf__card:hover {
+  background-color: var(--foreground-color);
+}
+
+.conf__item:nth-child(odd) .conf__card:hover {
+  transform: rotate(-2deg);
+}
+
+.conf__item:nth-child(even) .conf__card:hover {
+  transform: rotate(2deg);
+}
+
+.conf__list {
+  grid-column: 7/-1;
+}
+
+.about__exp-wrapper,
+.about__conf,
+.about__conf-wrapper {
+  grid-template-columns: var(--base-columns);
+}
+
+.about__exp-wrapper {
+  gap: var(--layout-unit);
+}
+
+.exp__heading,
+.about__conf-heading {
   margin-bottom: var(--unit-D);
-  grid-column: 3/span 2;
+  grid-column: 1/span 3;
 }
 
 .exp__list {
-  grid-column: 5/-1;
-  max-width: 40ch;
+  grid-column: 7/-1;
 }
 
 .about__experience,
@@ -1730,8 +1798,17 @@ p {
   }
   /* -------------------------------------------------------------------------- */
   /*                          !!  INDIV ABOUT PAGE                              */
-  .about__exp-wrapper {
+  .about__intro {
+    flex-direction: column;
+    row-gap: var(--layout-unit);
+  }
+  .about__intro-heading {
+    flex-direction: row;
+  }
+  .about__exp-wrapper,
+  .about__conf-wrapper {
     display: grid;
+    gap: var(--layout-unit);
   }
   /* -------------------------------------------------------------------------- */
   /*                                 !!! Footer                                 */
