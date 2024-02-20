@@ -165,13 +165,13 @@ textarea {
   /* Leading */
   --lh-A: 1.25;
   --lh-B: 1.2;
-  --lh-C: 1;
-  --lh-D: 1;
+  --lh-C: 1.25;
+  --lh-D: 1.4;
   --lh-E: 1.5;
   /* Tracking */
   --ls-A: -0.025em;
   --ls-B: -0.0275em;
-  --ls-C: 0.01em;
+  --ls-C: 0.00em;
   --ls-D: -0.01em;
   --ls-E: 0.0105em;
   /* -------------------------------------------------------------------------- */
@@ -202,8 +202,10 @@ textarea {
   --ease-curve-C: cubic-bezier(0, 0.5, 0.5, 1);
   --blur-strength: calc(var(--unit-E) * 0.25);
   --nav-zIndex: 100;
-  --base-zIndex: 25; /* page content */
-  --tag-correction: calc(var(--fsz-B) / 5); /* project cards */
+  --base-zIndex: 25;
+  /* page content */
+  --tag-correction: calc(var(--fsz-B) / 5);
+  /* project cards */
   --global-delay: 400ms;
 }
 
@@ -1454,7 +1456,7 @@ p {
 }
 
 .about__intro-copy {
-  margin-block-start: -1.1rem;
+  margin-block-start: -0.675rem;
   flex: 1 1 70.5%;
 }
 
@@ -1463,11 +1465,11 @@ p {
 }
 
 .about__graf {
-  font-size: calc(var(--fsz-A) * 1);
+  font-size: calc(var(--fsz-B) * 1);
   font-weight: 400;
-  font-stretch: 75%;
+  font-stretch: 70%;
   margin-bottom: 1em;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   line-height: 1.4;
 }
 
@@ -1497,16 +1499,27 @@ p {
 
 .exp__item-heading,
 .exp__item-heading__org {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .exp__item-heading {
-  line-height: var(--lh-E);
+  line-height: var(--lh-C);
+  font-size: var(--fsz-C);
+}
+
+.exp__item-heading__org {
+  display: block;
+  margin-top: 0.25rem;
 }
 
 .exp__item-subheading,
 .exp__item-scope {
   margin-bottom: 0;
+}
+
+.exp__item-desc {
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
 }
 
 .experiments__hero {
