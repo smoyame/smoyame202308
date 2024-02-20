@@ -848,7 +848,7 @@ p {
 
 .about__intro-copy {
 	// font-size: var(--fsz-A);
-	margin-block-start: -1.1rem;
+	margin-block-start: -.675rem;
 	flex: 1 1 70.5%;
 }
 
@@ -857,11 +857,11 @@ p {
 }
 
 .about__graf {
-	font-size: calc(var(--fsz-A) * 1);
+	font-size: calc(var(--fsz-B) * 1);
 	font-weight: 400;
-	font-stretch: 75%;
+	font-stretch: 70%;
 	margin-bottom: 1em;
-	letter-spacing: -0.045em;
+	letter-spacing: -0.04em;
 	line-height: 1.4;
 }
 
@@ -891,16 +891,27 @@ p {
 
 .exp__item-heading,
 .exp__item-heading__org {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 .exp__item-heading {
-	line-height: var(--lh-E);
+	line-height: var(--lh-C);
+	font-size: var(--fsz-C);
+}
+
+.exp__item-heading__org {
+	display: block;
+	margin-top: .25rem;
 }
 
 .exp__item-subheading,
 .exp__item-scope {
 	margin-bottom: 0;
+}
+
+.exp__item-desc {
+	font-size: .9em;
+	margin-bottom: .5rem;
 }
 
 .experiments__hero {
