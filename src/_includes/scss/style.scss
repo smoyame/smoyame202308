@@ -853,7 +853,7 @@ p {
 }
 
 .about__intro {
-	padding-top: 42vh;
+	padding-top: 25vh;
 }
 
 .about__graf {
@@ -1161,6 +1161,15 @@ p {
 
 	/* -------------------------------------------------------------------------- */
 	/*                          !!  INDIV ABOUT PAGE                              */
+	.about__intro {
+		flex-direction: column;
+		row-gap: var(--layout-unit);
+	}
+
+	.about__intro-heading {
+		flex-direction: row;
+	}
+
 	.about__exp-wrapper {
 		display: grid;
 	}
