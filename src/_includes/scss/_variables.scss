@@ -2,26 +2,19 @@
 	/* -------------------------------------------------------------------------- */
 	/*                                    Colors                                  */
 	/* -------------------------------------------------------------------------- */
-
 	--hsl-night: 240, 10%, 20%;
 	--hsl-bright: 60, 5%, 95%;
-
 	--rgb-night: 46, 46, 56;
 	--rgb-bright: 243, 243, 243;
-
 	--rgb-accent: 20, 20, 117;
-
 	--glass-opacity: 0.895;
-
 	--main-night: hsl(240, 10%, 14%);
 	--night-glass: hsla(240, 10%, 20%, 0.725);
 	--main-bright: hsl(300, 6%, 93%);
 	--bright-glass: hsla(300, 6%, 93%, 0.725);
-
 	/* -------------------------------------------------------------------------- */
 	/*                                Type Variables                              */
 	/* -------------------------------------------------------------------------- */
-
 	/* Family */
 	--primary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
 	--primary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
@@ -29,7 +22,6 @@
 	--secondary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
 	--tertiary-type: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
 	--tertiary-type-B: "Sharp Grotesk", Archivo, Helvetica, Arial, sans-serif;
-
 	--ff-A: var(--primary-type);
 	--ff-B: var(--primary-type);
 	--ff-C: var(--secondary-type);
@@ -42,44 +34,37 @@
 	--fsz-C: clamp(19px, calc(0.5rem + 1.0671vw), calc(0.5rem + 1.0671vw));
 	--fsz-D: var(--fs-root);
 	--fsz-E: var(--fs-root);
-
 	/* Weight */
 	--fw-A: 500;
 	--fw-B: 500;
 	--fw-C: 400;
 	--fw-D: 400;
 	--fw-E: 400;
-
 	/* Stretch */
 	--fst-A: 80%;
 	--fst-B: 80%;
 	--fst-C: 80%;
 	--fst-D: 75%;
 	--fst-E: 75%;
-
 	/* Leading */
 	--lh-A: 1.25;
 	--lh-B: 1.2;
-	--lh-C: 1;
-	--lh-D: 1;
+	--lh-C: 1.25;
+	--lh-D: 1.4;
 	--lh-E: 1.5;
-
 	/* Tracking */
 	--ls-A: -0.025em;
 	--ls-B: -0.0275em;
-	--ls-C: 0.01em;
+	--ls-C: 0.00em;
 	--ls-D: -0.01em;
 	--ls-E: 0.0105em;
-
 	/* -------------------------------------------------------------------------- */
 	/*                               Set base values                              */
 	/* -------------------------------------------------------------------------- */
-
 	--foreground-color: var(--main-night);
 	--background-color: var(--main-bright);
 	--fg-glass: var(--night-glass);
 	--bg-glass: var(--bright-glass);
-
 	--unit-root: var(--fsz-root);
 	--unit-base: calc(var(--fsz-root) * 2.5);
 	--unit: calc(var(--unit-base) * 0.5);
@@ -89,26 +74,21 @@
 	--unit-D: var(--unit-base);
 	--unit-E: var(--unit);
 	--unit-F: calc(var(--unit) * 0.5);
-
 	--border-width: 1px;
 	--border-radius: var(--unit-F);
-
 	--layout-unit: clamp(18px, calc(0.75rem + 2vw), calc(0.75rem + 2vw));
 	--base-columns: repeat(12, 1fr);
-
 	/* -------------------------------------------------------------------------- */
 	/*                               Property Units                               */
 	/* -------------------------------------------------------------------------- */
-
 	--ease-curve-A: cubic-bezier(0, 1, 0, 1);
 	--ease-curve-B: cubic-bezier(0, 0.75, 0.25, 1);
 	--ease-curve-C: cubic-bezier(0, 0.5, 0.5, 1);
 	--blur-strength: calc(var(--unit-E) * 0.25);
-
 	--nav-zIndex: 100;
-	--base-zIndex: 25; /* page content */
-
-	--tag-correction: calc(var(--fsz-B) / 5); /* project cards */
-
+	--base-zIndex: 25;
+	/* page content */
+	--tag-correction: calc(var(--fsz-B) / 5);
+	/* project cards */
 	--global-delay: 400ms;
 }
