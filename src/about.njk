@@ -6,12 +6,12 @@ title: 'About Me | Designer | Sami Moya Medina'
 <section class="section about__intro stepA">
 	<h1 class="about__intro-heading">
 		<span class="abt_name-block">
-			<span class="overline name-label">First Name</span>
-			<span class="level-E abt-name subtle">Samanta</span>
+			<span class="overline name-label subtle">First Name</span>
+			<span class="level-C abt-name subtle">Samanta</span>
 		</span>
 		<span class="abt_name-block">
-			<span class="overline name-label">Last Name</span>
-			<span class="level-E abt-name subtle">Moya Medina</span>
+			<span class="overline name-label subtle">Last Name</span>
+			<span class="level-C abt-name subtle">Moya Medina</span>
 		</span>
 	</h1>
 	<div class="about__intro-copy">
@@ -20,9 +20,21 @@ title: 'About Me | Designer | Sami Moya Medina'
 		{% endfor %}
 	</div>
 </section>
+<section class="section about__conf stepB">
+	<div class="about__conf-wrapper">
+		<h2 class="about__conf-heading level-C">👀 I'm Tuned Into</h1>
+			<ul class="conf__list">
+				{% for resource in about.resources %}
+				<li class="conf__item"><a href="{{resource.link}}" target="_blank" class="conf__card">{{resource.name}}</a></li>
+				{% endfor %}
+				<li class="conf__item">... and counting!</li>
+			</ul>
+	</div>
+</section>
+{# TODO Clean up templating + add to CMS schema #}
 <section class="section about__experience level-D stepB">
 	<div class="about__exp-wrapper">
-		<h2 class="exp__heading level-C">Experience</h2>
+		<h2 class="exp__heading level-C">👩‍🎨 Experience</h2>
 		<ul class="exp__list">
 			<li class="exp__item">
 
