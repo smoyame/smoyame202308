@@ -22,14 +22,25 @@ title: 'About Me | Designer | Sami Moya Medina'
 </section>
 <section class="section about__experience level-D stepB">
 	<div class="about__exp-wrapper">
-		<h2 class="exp__heading  level-C">Experience</h2>
+		<h2 class="exp__heading level-C">Experience</h2>
 		<ul class="exp__list">
 			<li class="exp__item">
-				<h3 class="exp__item-heading"><span class="exp__item-heading__org overline">Contract & Freelance Clients</span> Torres for San Mateo, PAWS Animal Shelter, MissionWired & Chapman Cubine Allen + Hussey, individual designers, independent software engineers and more.</h3>
+
+				<h3 class="exp__item-heading">Digital Design + Production&nbsp;Strategist <span class="exp__item-heading__org" title="Employer">MissionWired</span></h3>
+
+				<p class="exp__item-dates level-E subtle">
+					2023.10
+					–
+					Present<br>
+				</p>
+			</li>
+			<li class="exp__item">
+				<h3 class="exp__item-heading">Brand & Web Designer <span class="exp__item-heading__org" title="Employer">Independent</span></h3>
+				<p class="exp__item-desc subtle">Torres for San Mateo, PAWS Animal Shelter, MissionWired & Chapman Cubine Allen + Hussey (acquired), individual designers, independent software engineers and more.</p>
 				<p class="exp__item-dates level-E subtle">
 					2021.09
 					&ndash;
-					Present<br>
+					2023.12<br>
 				</p>
 			</li>
 			{% for exp in about.exp %}
@@ -39,8 +50,7 @@ title: 'About Me | Designer | Sami Moya Medina'
 			{% set subheading = exp.title %}
 
 			<li class="exp__item">
-
-				<h3 class="exp__item-heading"><span class="exp__item-heading__org">{{ organization }},</span> {{ subheading }}</h3>
+				<h3 class="exp__item-heading">{{ subheading }} <span class="exp__item-heading__org" title="Employer">{{ organization }}</span></h3>
 
 				<p class="exp__item-dates level-E subtle">
 					{{ exp.dates.start | replace("-", ".") | truncate(7, true, "") }}
