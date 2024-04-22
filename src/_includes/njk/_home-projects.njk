@@ -31,6 +31,19 @@
 					</div>
 				</a>
 			</li>
+			{% elseif project.feature == true and project.live == false %}
+			<li class="feature not-live start{{project.grid.start}} end{{project.grid.end}}">
+				<div class="project-card">
+					<div class="project-card__text project-card__item">
+						<h3 class="project-name level-B">{{project.title}}</h3>
+						<span class="main-tag">{{project.tags[0]}}</span>
+					</div>
+					<div class="cover project-card__item">
+						<img srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
+					</div>
+				</div>
+			</li>
+
 			{%endif%}
 			{%endfor%}
 		</ul>
