@@ -92,6 +92,12 @@ img,
 img {
   width: 100%;
   height: auto;
+  vertical-align: middle;
+  text-align: center;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.5rem;
 }
 
 fieldset {
@@ -644,6 +650,14 @@ p {
   font-weight: var(--fw-E);
   letter-spacing: var(--ls-E);
   line-height: var(--lh-E);
+}
+
+img {
+  --_placeholder: cyan;
+  --_ratio: unset;
+  background: var(--_placeholder);
+  background-size: cover;
+  aspect-ratio: var(--_ratio);
 }
 
 ::selection {
@@ -1367,6 +1381,19 @@ p {
   display: inline-block;
   line-height: var(--lh-E);
   margin-inline-end: max(0%, 25vw - 8vh);
+}
+
+.p-desc__list-u {
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+.p-desc__list-item {
+  line-height: 150%;
+}
+
+.p-desc__list-item::marker {
+  margin-right: 0.5em;
 }
 
 .p-discipline,
