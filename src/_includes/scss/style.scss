@@ -67,6 +67,28 @@ img {
 	background: var(--_placeholder);
 	background-size: cover;
 	aspect-ratio: var(--_ratio);
+	position: relative;
+}
+
+.cover.loading::before {
+	content: '';
+	position: absolute;
+	background: var(--_placeholder);
+	background-size: cover;
+	aspect-ratio: var(--_ratio);
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius);
+	z-index: 999;
+	filter: blur(10px);
+	clip-path: rect(0% 0% 100% 100% round 2%);
+	transition: opacity 500ms linear;
+	opacity: 1;
+}
+
+.cover.loading.loaded::before {
+	opacity: 0;
 }
 
 ::selection {
