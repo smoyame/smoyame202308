@@ -61,6 +61,14 @@ p {
 	@include utility.typelvl(E);
 }
 
+img {
+	--_placeholder: cyan;
+	--_ratio: unset;
+	background: var(--_placeholder);
+	background-size: cover;
+	aspect-ratio: var(--_ratio);
+}
+
 ::selection {
 	background-color: var(--foreground-color);
 	color: var(--background-color);
@@ -757,6 +765,19 @@ p {
 	display: inline-block;
 	line-height: var(--lh-E);
 	margin-inline-end: max(0%, calc(25vw - 8vh));
+}
+
+.p-desc__list-u {
+	list-style-type: disc;
+	margin-left: 1em;
+}
+
+.p-desc__list-item {
+	line-height: 150%;
+}
+
+.p-desc__list-item::marker {
+	margin-right: .5em;
 }
 
 .p-discipline,
