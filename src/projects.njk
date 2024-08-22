@@ -32,7 +32,7 @@
 	</div>
 </section>
 <div class="proj__cover stepB">
-	<img class="hero-cover__img" srcset="{% for i in range(0, srcsetWidths.length) %}{{p.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{p.cover.alt}}">
+	<img loading="lazy" class="hero-cover__img" style="--_ratio: {{p.cover.dimensions.aspectRatio}}; --_placeholder: url('{{p.cover.dataImg}}');" width="{{p.cover.dimensions.width}}" height="{{p.cover.dimensions.height}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{p.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{p.cover.alt}}">
 </div>
 <section class="proj__copy-intro section stepC">
 	<div class="p-copy__wrapper">
@@ -81,7 +81,7 @@
 <section class="p__gallery section stepC">
 	{% for piece in p.content %}
 	{% if piece._type == "mediaBlock" %}
-	<img class="gallery__item gall__image start{{piece.grid.start}} end{{piece.grid.end}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{ piece.item.URL }}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ piece.item.alt }}">
+	<img style="--_ratio: {{piece.dimensions.aspectRatio}}; --_placeholder: url('{{piece.dataImg}}');" width="{{piece.dimensions.width}}" height="{{piece.dimensions.height}}" class="gallery__item gall__image start{{piece.grid.start}} end{{piece.grid.end}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{ piece.item.URL }}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ piece.item.alt }}">
 	{% elif piece._type == "textBlock" %}
 	<div class="gallery__item gall__text-wrapper start{{piece.grid.start}} end{{piece.grid.end}}">
 		{% for graf in piece.text %}

@@ -27,7 +27,7 @@
 						<span class="main-tag">{{project.tags[0]}}</span>
 					</div>
 					<div class="cover project-card__item">
-						<img srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
+						<img loading="lazy" style="--_ratio: {{project.cover.dimensions.aspectRatio}}; --_placeholder: url('{{project.cover.dataImg}}');" width="{{project.cover.dimensions.width}}" height="{{project.cover.dimensions.height}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
 					</div>
 				</a>
 			</li>
@@ -39,7 +39,7 @@
 						<span class="main-tag">{{project.tags[0]}}</span>
 					</div>
 					<div class="cover project-card__item">
-						<img srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
+						<img loading="lazy" srcset="{% for i in range(0, srcsetWidths.length) %}{{project.cover.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ project.cover.alt }}" alt="Placeholder image." class="cover-img">
 					</div>
 				</div>
 			</li>
