@@ -87,7 +87,7 @@ img {
 	opacity: 1;
 }
 
-.cover.loading.loaded::before {
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading.loaded::before {
 	opacity: 0;
 }
 
