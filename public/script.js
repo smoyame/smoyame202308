@@ -70,3 +70,7 @@ smileySVG.addEventListener("click", () => {
 	place = (place + 1) % altFlavors.length;
 });
 
+/* Loading images */
+Promise.all(Array.from(document.images).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; img.parentElement.classList.add('loaded'); })))
+
+Array.from(document.images).forEach((image) => { })
