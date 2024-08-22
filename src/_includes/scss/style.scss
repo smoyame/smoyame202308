@@ -70,7 +70,7 @@ img {
 	position: relative;
 }
 
-.cover.loading::before {
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before {
 	content: '';
 	position: absolute;
 	background: var(--_placeholder);
