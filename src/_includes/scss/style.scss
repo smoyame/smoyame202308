@@ -70,7 +70,10 @@ img {
 	position: relative;
 }
 
-:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before {
+.cover.loading::before,
+.proj__cover.loading::before,
+.gall-image-wrapper.loading::before,
+.expts__card-img.loading::before {
 	content: '';
 	position: absolute;
 	background: var(--_placeholder);
@@ -81,14 +84,26 @@ img {
 	height: 100%;
 	border-radius: var(--border-radius);
 	z-index: 999;
+	opacity: 1;
 	filter: blur(10px);
 	clip-path: rect(0% 0% 100% 100% round 2%);
-	transition: opacity 500ms linear;
-	opacity: 1;
+	animation: fadeOutStatic 2s var(--ease-curve-A) forwards;
+	animation-play-state: paused;
 }
 
-:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading.loaded::before {
-	opacity: 0;
+.loading:has(>img)::before {
+	color: transparent;
+}
+
+.cover.loading.loaded::before,
+.proj__cover.loading.loaded::before,
+.gall-image-wrapper.loading.loaded::before,
+.expts__card-img.loading.loaded::before {
+	animation-play-state: running;
+}
+
+.loading.loaded:has(>img)::before {
+	color: inherit;
 }
 
 ::selection {
