@@ -5,7 +5,6 @@
 /*                                                                            */
 /*                                                                            */
 /* -------------------------------------------------------------------------- */
-
 @mixin typelvl($letter) {
 	font-family: var(--ff-#{$letter});
 	font-size: var(--fsz-#{$letter});
@@ -31,13 +30,14 @@
 
 /* -------------------------------------------------------------------------- */
 /*                               GRID UTILITIES                               */
-
 @mixin gridSpan($start: true, $value) {
 	@if $start {
 		.start#{$value} {
 			grid-column-start: #{$value};
 		}
-	} @else {
+	}
+
+	@else {
 		.end#{$value} {
 			grid-column-end: #{$value};
 		}
@@ -56,8 +56,19 @@
 	0% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes fadeOutStatic {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }
 
@@ -66,9 +77,11 @@
 		opacity: 0;
 		translate: 0 var(--unit-D) 0;
 	}
+
 	85% {
 		translate: 0 0 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -79,6 +92,7 @@
 		margin-top: -10%;
 		opacity: 0;
 	}
+
 	100% {
 		margin-top: 0;
 		opacity: 1;
@@ -90,6 +104,7 @@
 		margin-bottom: -10%;
 		opacity: 0;
 	}
+
 	100% {
 		margin-bottom: 0;
 		opacity: 1;
