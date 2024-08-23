@@ -85,20 +85,20 @@ img {
 
 :is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before {
 	z-index: 98;
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(3px);
 }
 
 :is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::after {
 	z-index: 97;
 	position: absolute;
 	background-image: var(--_placeholder);
-	filter: blur(4px);
+	filter: blur(2px);
 }
 
 :is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before,
 :is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::after {
-	animation: fadeOutSharpen .5s ease-in forwards;
-	animation-delay: .4s;
+	animation: fadeOutSharpen 1s ease-in forwards;
+	animation-delay: .5s;
 }
 
 ::selection {
