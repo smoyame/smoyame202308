@@ -95,6 +95,7 @@ img {
   vertical-align: middle;
   text-align: center;
   font-style: italic;
+  background: var(--_placeholder);
   background-repeat: no-repeat;
   background-size: cover;
   shape-margin: 0.5rem;
@@ -315,6 +316,16 @@ textarea {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes fadeOutSharpen {
+  0% {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+  }
+  100% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
   }
 }
 @keyframes fadeIn {
@@ -602,7 +613,7 @@ textarea {
 /*                                   Basics                                   */
 /* -------------------------------------------------------------------------- */
 html {
-  transition: all 2s ease;
+  transition: all 1.25s ease;
 }
 
 [data-color-scheme=dark][data-color-flavor] {
@@ -661,48 +672,43 @@ p {
 }
 
 img {
-  --_placeholder: cyan;
-  --_ratio: unset;
-  background: var(--_placeholder);
-  background-size: cover;
   aspect-ratio: var(--_ratio);
   position: relative;
 }
 
-.cover.loading::before,
-.proj__cover.loading::before,
-.gall-image-wrapper.loading::before,
-.expts__card-img.loading::before {
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading {
+  position: relative;
+}
+
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before,
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::after {
   content: "";
   position: absolute;
-  background: var(--_placeholder);
-  background-size: cover;
-  aspect-ratio: var(--_ratio);
+  top: 0;
   display: block;
   width: 100%;
   height: 100%;
+  aspect-ratio: var(--_ratio);
+  background-size: cover;
   border-radius: var(--border-radius);
-  z-index: 999;
-  opacity: 1;
-  filter: blur(10px);
-  clip-path: rect(0% 0% 100% 100% round 2%);
-  animation: fadeOutStatic 2s var(--ease-curve-A) forwards;
-  animation-play-state: paused;
 }
 
-.loading:has(> img)::before {
-  color: transparent;
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before {
+  z-index: 98;
+  backdrop-filter: blur(4px);
 }
 
-.cover.loading.loaded::before,
-.proj__cover.loading.loaded::before,
-.gall-image-wrapper.loading.loaded::before,
-.expts__card-img.loading.loaded::before {
-  animation-play-state: running;
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::after {
+  z-index: 97;
+  position: absolute;
+  background-image: var(--_placeholder);
+  filter: blur(4px);
 }
 
-.loading.loaded:has(> img)::before {
-  color: inherit;
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::before,
+:is(.cover, .proj__cover, .gall-image-wrapper, .expts__card-img).loading::after {
+  animation: fadeOutSharpen 0.5s ease-in forwards;
+  animation-delay: 0.4s;
 }
 
 ::selection {
