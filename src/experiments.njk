@@ -15,8 +15,8 @@ layout: 'base.njk'
 	<ul class="experiments__gallery">
 		{% for piece in experiments %}
 		<li class="experiments__card">
-			<div class="expts__card-img loading">
-				<img alt="{{piece.image.alt}}" style="--_ratio: {{piece.image.dimensions.aspectRatio}}; --_placeholder: url('{{piece.image.dataImg}}');" width="{{piece.image.dimensions.width}}" height="{{piece.image.dimensions.height}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{piece.image.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}">
+			<div class="expts__card-img loading" style="--_ratio: {{piece.image.dimensions.aspectRatio}}; --_placeholder: url('{{piece.image.dataImg}}');" width="{{piece.image.dimensions.width}}">
+				<img alt="{{piece.image.alt}}" height="{{piece.image.dimensions.height}}" srcset="{% for i in range(0, srcsetWidths.length) %}{{piece.image.URL}}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}">
 			</div>
 			<div class="card-copy">
 				<h2 class="exp__copy-title level-C">{{piece.title}}</h2>
