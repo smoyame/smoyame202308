@@ -44,9 +44,23 @@
 		</div>
 		<div class="p-info p-copy-block">
 			<div class="p-desc">
+				{% if p.title == "MissionWired" %}
+				<p class="p-desc__graf text__graf">At MissionWired, I developed email templates, designed landing pages ad-hoc, and edited existing assets for web and email use. We helped clients such as Make-A-Wish, Guiding Eyes for the Blind, Biden-Harris, Mothers Against Drunk Driving (MADD), the Democratic Governors Association, and more!</p>
+				<p class="p-desc__graf text__graf">We're limited by the fast-paced nature of the agency and the scope that the internal tools allow.</p>
+				<p class="p-desc__graf text__graf">These surveys for clients had us working in a legacy internal tool that brought classic single-page application speed and limitations. Take a look:</p>
+				<ul class="p-desc__list-u">
+					<li class="p-desc__list-item text__graf"><a href="https://engage.wish.org/maw-mothers-day" target="_blank">https://engage.wish.org/maw-mothers-day</a></li>
+					<li class="p-desc__list-item text__graf"><a href="https://action.joebiden.com/bvf-obama-biden" target="_blank">https://action.joebiden.com/bvf-obama-biden</a></li>
+					<li class="p-desc__list-item text__graf"><a href="https://surveys.signforgood.com/aclu-voting-rights-history" target="_blank">https://surveys.signforgood.com/aclu-voting-rights-history</a></li>
+					<li class="p-desc__list-item text__graf"><a href="https://surveys.signforgood.com/tns-map-journey" target="_blank">https://surveys.signforgood.com/tns-map-journey</a></li>
+					<li class="p-desc__list-item text__graf"><a href="https://petitions.signforgood.com/madd-safe-summer-pledge-2024" target="_blank">https://petitions.signforgood.com/madd-safe-summer-pledge-2024</a></li>
+					<li class="p-desc__list-item text__graf"><a href="https://action.democrats.org/dnc-2024-renewal" target="_blank">https://action.democrats.org/dnc-2024-renewal</a></li>
+				</ul>
+				{% elseif %}
 				{% for graf in p.info.grafs %}
 				<p class="p-desc__graf text__graf">{{ graf }}</p>
 				{%endfor%}
+				{% endif %}
 			</div>
 			<div class="p-attr">
 				<div class="attr__discipline attr-section">
