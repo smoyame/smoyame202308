@@ -40,7 +40,7 @@
 			{% if p.location.link %}
 			<span class="p-livetag overline">{{p.location.label}}</span>
 			<a href="{{p.location.link}}" class="p-livelink link">{{p.location.text}} ↗</a>
-			{%endif%}
+			{% endif %}
 		</div>
 		<div class="p-info p-copy-block">
 			<div class="p-desc">
@@ -56,7 +56,7 @@
 					<li class="p-desc__list-item text__graf"><a href="https://petitions.signforgood.com/madd-safe-summer-pledge-2024" target="_blank">https://petitions.signforgood.com/madd-safe-summer-pledge-2024</a></li>
 					<li class="p-desc__list-item text__graf"><a href="https://action.democrats.org/dnc-2024-renewal" target="_blank">https://action.democrats.org/dnc-2024-renewal</a></li>
 				</ul>
-				{% elseif %}
+				{% else %}
 				{% for graf in p.info.grafs %}
 				<p class="p-desc__graf text__graf">{{ graf }}</p>
 				{%endfor%}
