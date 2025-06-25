@@ -3,6 +3,7 @@
 @use "_variables" as variable;
 @use "_utilities" as utility;
 @use "__mobile-nav";
+@use "_phone-frame";
 
 /* -------------------------------------------------------------------------- */
 /*                                   Basics                                   */
@@ -524,7 +525,7 @@ img {
 
 .archive-item:hover,
 .archive-item:focus-within,
-:is(.archive-item:hover, .archive-item:focus-within) + .archive-item {
+:is(.archive-item:hover, .archive-item:focus-within)+.archive-item {
 	border-top-color: var(--background-color);
 }
 
@@ -686,7 +687,7 @@ img {
 	z-index: -1;
 }
 
-.footer__bar:hover > div {
+.footer__bar:hover>div {
 	animation-play-state: paused;
 }
 
@@ -921,7 +922,7 @@ img {
 	margin-bottom: var(--unit-F);
 }
 
-.about__subheading + p {
+.about__subheading+p {
 	width: min(42ch, 100%);
 }
 
@@ -1112,7 +1113,7 @@ img {
 		content: none;
 	}
 
-	.toggle--menu:not(:checked) ~ .content__wrapper .nav__item {
+	.toggle--menu:not(:checked)~.content__wrapper .nav__item {
 		transform: translateY(0em);
 		opacity: 1;
 		pointer-events: unset;

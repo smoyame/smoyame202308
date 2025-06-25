@@ -1,0 +1,85 @@
+{% macro frame(emailURL) %}
+<div class="frame-wrapper">
+	<div class="screen-wrapper">
+		<section class="generic-block phone-bar">
+			<div class="active">
+				<time datetime="10:10">10:10</time>
+			</div>
+			<div class="system">
+				<div class="wifi">
+					<svg class="icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 19.5H12.01M22.8064 8.70076C19.9595 6.09199 16.1656 4.5 11.9999 4.5C7.83414 4.5 4.04023 6.09199 1.19336 8.70076M4.73193 12.243C6.67006 10.5357 9.21407 9.5 12 9.5C14.7859 9.5 17.3299 10.5357 19.268 12.243M15.6983 15.7751C14.6792 14.9763 13.3952 14.5 11.9999 14.5C10.5835 14.5 9.28172 14.9908 8.25537 15.8116" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="signal">
+					<svg class="icon" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+							<g transform="translate(42.666667, 85.333333)">
+								<path d="M426.666667,1.42108547e-14 L426.666667,341.333333 L3.55271368e-14,341.333333 L426.666667,1.42108547e-14 Z M384,88.7466667 L341.333,122.88 L341.333,298.666 L384,298.666667 L384,88.7466667 Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+
+								</path>
+							</g>
+						</g>
+					</svg>
+				</div>
+				<div class="battery">
+					<svg width="100%" height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
+						<path d="M14 5h-4V3h4Zm3 15V6a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1" style="fill: currentColor;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1" />
+					</svg>
+				</div>
+			</div>
+		</section>
+		<nav class="app-nav">
+			<div class="back">
+				<svg class="icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+			<div class="options">
+				<svg class="icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M4 7.9966C3.83599 7.99236 3.7169 7.98287 3.60982 7.96157C2.81644 7.80376 2.19624 7.18356 2.03843 6.39018C2 6.19698 2 5.96466 2 5.5C2 5.03534 2 4.80302 2.03843 4.60982C2.19624 3.81644 2.81644 3.19624 3.60982 3.03843C3.80302 3 4.03534 3 4.5 3H19.5C19.9647 3 20.197 3 20.3902 3.03843C21.1836 3.19624 21.8038 3.81644 21.9616 4.60982C22 4.80302 22 5.03534 22 5.5C22 5.96466 22 6.19698 21.9616 6.39018C21.8038 7.18356 21.1836 7.80376 20.3902 7.96157C20.2831 7.98287 20.164 7.99236 20 7.9966M10 13H14M4 8H20V16.2C20 17.8802 20 18.7202 19.673 19.362C19.3854 19.9265 18.9265 20.3854 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<svg class="icon" width="100%" height="100%" viewBox="2 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9 3H15M3 6H21M19 6L18.2987 16.5193C18.1935 18.0975 18.1409 18.8867 17.8 19.485C17.4999 20.0118 17.0472 20.4353 16.5017 20.6997C15.882 21 15.0911 21 13.5093 21H10.4907C8.90891 21 8.11803 21 7.49834 20.6997C6.95276 20.4353 6.50009 20.0118 6.19998 19.485C5.85911 18.8867 5.8065 18.0975 5.70129 16.5193L5 6M10 10.5V15.5M14 10.5V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<svg class="icon menu" width="100%" height="100%" viewBox="10 0 4 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+		</nav>
+		<section class="app-wrapper">
+			<header class="app-header">
+				<div class="subject-line">Email Subject Line</div>
+				<div class="send-info">
+					<div class="envelope-info">
+						<div class="icon" style="aspect-ratio: 1; width: 48px; height: 48px; background: darkgray; border-radius: 99rem; flex-grow: 0;"></div>
+						<div class="sent">
+							<div class="from">
+								Sender Name
+							</div>
+							<div class="to">
+								<span class="field-label" style="white-space: preserve nowrap;">To:</span>&nbsp;<span class="field-value subtle">you@domain.com</span>
+							</div>
+						</div>
+					</div>
+					<div class="send-time subtle" style="white-space: preserve nowrap;">10:10 AM</div>
+				</div>
+			</header>
+			<section class="email-wrapper">
+				<iframe src="{{ emailURL }}" frameborder="0"></iframe>
+			</section>
+			<section class="app-actionbar">
+				<div class="reply">
+					<svg class="icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9 14L4 9M4 9L9 4M4 9H10.4C13.7603 9 15.4405 9 16.7239 9.65396C17.8529 10.2292 18.7708 11.1471 19.346 12.2761C20 13.5595 20 15.2397 20 18.6V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<div class="text subtle">Reply</div>
+
+				</div>
+			</section>
+		</section>
+	</div>
+</div>
+{% endmacro %}
