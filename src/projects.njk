@@ -1,20 +1,20 @@
 ---js
 
 {
-  layout: 'base.njk',
-  pagination: {
-    data: 'projects',
-    size: 1,
-    alias: 'p',
-    before: function(pageData, allData) {
-      return pageData.filter((entry)=>entry.live)
-    } 
-  },
-  permalink: "projects/{{ p.title | slugify }}/",
-  eleventyComputed: {
-    title: '{{ p.title }} | Designer | Sami Moya Medina',
-    theme: '{{ p.theme }}'
-  }
+layout: 'base.njk',
+pagination: {
+data: 'projects',
+size: 1,
+alias: 'p',
+before: function(pageData, allData) {
+return pageData.filter((entry)=>entry.live)
+}
+},
+permalink: "projects/{{ p.title | slugify }}/",
+eleventyComputed: {
+title: '{{ p.title }} | Designer | Sami Moya Medina',
+theme: '{{ p.theme }}'
+}
 }
 
 ---
@@ -44,23 +44,9 @@
 		</div>
 		<div class="p-info p-copy-block">
 			<div class="p-desc">
-				{% if p.title == "MissionWired" %}
-				<p class="p-desc__graf text__graf">At MissionWired, I developed email templates, designed landing pages ad-hoc, and edited existing assets for web and email use. We helped clients such as Make-A-Wish, Guiding Eyes for the Blind, Biden-Harris, Mothers Against Drunk Driving (MADD), the Democratic Governors Association, and more!</p>
-				<p class="p-desc__graf text__graf">We're limited by the fast-paced nature of the agency and the scope that the internal tools allow.</p>
-				<p class="p-desc__graf text__graf">These surveys for clients had us working in a legacy internal tool that brought classic single-page application speed and limitations. Take a look:</p>
-				<ul class="p-desc__list-u">
-					<li class="p-desc__list-item text__graf"><a href="https://engage.wish.org/maw-mothers-day" target="_blank">https://engage.wish.org/maw-mothers-day</a></li>
-					<li class="p-desc__list-item text__graf"><a href="https://action.joebiden.com/bvf-obama-biden" target="_blank">https://action.joebiden.com/bvf-obama-biden</a></li>
-					<li class="p-desc__list-item text__graf"><a href="https://surveys.signforgood.com/aclu-voting-rights-history" target="_blank">https://surveys.signforgood.com/aclu-voting-rights-history</a></li>
-					<li class="p-desc__list-item text__graf"><a href="https://surveys.signforgood.com/tns-map-journey" target="_blank">https://surveys.signforgood.com/tns-map-journey</a></li>
-					<li class="p-desc__list-item text__graf"><a href="https://petitions.signforgood.com/madd-safe-summer-pledge-2024" target="_blank">https://petitions.signforgood.com/madd-safe-summer-pledge-2024</a></li>
-					<li class="p-desc__list-item text__graf"><a href="https://action.democrats.org/dnc-2024-renewal" target="_blank">https://action.democrats.org/dnc-2024-renewal</a></li>
-				</ul>
-				{% else %}
 				{% for graf in p.info.grafs %}
 				<p class="p-desc__graf text__graf">{{ graf }}</p>
 				{%endfor%}
-				{% endif %}
 			</div>
 			<div class="p-attr">
 				<div class="attr__discipline attr-section">
@@ -92,10 +78,70 @@
 		</div>
 	</div>
 </section>
+{% import "_phone.njk" as phone %}
+{% if p.title === "MissionWired" %}
+{% set emails = [
+'https://demo.smoya.me/amcr/',
+'https://demo.smoya.me/foe/',
+'https://demo.smoya.me/geb/',
+'https://demo.smoya.me/madd/',
+'https://demo.smoya.me/mdacc/',
+'https://demo.smoya.me/mdacc/newsletter'
+] %}
+{% set landingPages = [
+'https://surveys.signforgood.com/aclu-voting-rights-history',
+'https://petitions.signforgood.com/madd-safe-summer-pledge-2024',
+'https://engage.wish.org/maw-mothers-day',
+'https://action.democrats.org/dnc-2024-renewal',
+'https://surveys.signforgood.com/tns-map-journey'
+] %}
+
+<section class="stepC section--carousel sc--email">
+	<div class="intro-copy">
+		<h2 class="crs__title level-B" style="white-space: nowrap;">Emails</h2>
+		<div class="grafs">
+			<p class="text__graf">Scroll sideways to view each email, or to open them in a new tab. These are a select few out of many!</p>
+		</div>
+	</div>
+	<div class="p__carousel crs__email">
+		{% for email in emails %}
+		<div class="crs_child email-child">
+			{{ phone.frame(email) }}
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+
+<section class="stepC section--carousel sc--web">
+	<div class="intro-copy">
+		<h2 class="crs__title level-B" style="white-space: nowrap;">Web Pages</h2>
+		<div class="grafs">
+			<p class="text__graf">Scroll sideways to skim, or open the page in a new tab. These are a select few out of many!</p>
+		</div>
+	</div>
+	<div class="p__carousel crs__web">
+		{% for piece in p.content %}
+		{# <p>{{ piece | dump | safe }}</p> #}
+		{% if piece._type == "mediaBlock" %}
+		{% set index = loop.index0 %}
+		<div class="crs_child webpage-child">
+			<a href="{{ landingPages[index]}}" target="_blank" loading="lazy" class="gall-image-wrapper crs-image-wrapper loading start{{piece.grid.start}} end{{piece.grid.end}}" style="--_ratio: {{piece.item.dimensions.aspectRatio}}; --_placeholder: url('{{piece.item.dataImg}}');">
+				<img width="{{piece.dimensions.width}}" height="{{piece.dimensions.height}}" class="gallery__item crs__item gall__image " srcset="{% for i in range(0, srcsetWidths.length) %}{{ piece.item.URL }}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ piece.item.alt }}">
+			</a>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+</section>
+
+
+{% else %}
+
 <section class="p__gallery section stepC">
 	{% for piece in p.content %}
 	{% if piece._type == "mediaBlock" %}
-	<div loading="lazy" class="gall-image-wrapper loading start{{piece.grid.start}} end{{piece.grid.end}}" style="--_ratio: {{piece.dimensions.aspectRatio}}; --_placeholder: url('{{piece.dataImg}}');">
+	<div loading="lazy" class="gall-image-wrapper loading start{{piece.grid.start}} end{{piece.grid.end}}" style="--_placeholder: url('{{piece.dataImg}}');">
 		<img width="{{piece.dimensions.width}}" height="{{piece.dimensions.height}}" class="gallery__item gall__image " srcset="{% for i in range(0, srcsetWidths.length) %}{{ piece.item.URL }}?w={{ srcsetWidths[i] }} {{ srcsetWidths[i] }}w{% if (i == srcsetWidths.length) %}{% else %}, {% endif %}{% endfor %}" sizes="{% for i in range(0, srcsetWidths.length) %}{{srcsetSizes[i]}} {{ srcsetWidths[i] }}px{% if (i == srcsetWidths.length) %}{% elseif (i !== srcsetWidths.length) %}, {% endif %}{% endfor %}" alt="{{ piece.item.alt }}">
 	</div>
 	{% elif piece._type == "textBlock" %}
@@ -112,6 +158,8 @@
 	{% endif %}
 	{% endfor %}
 </section>
+{% endif %}
+
 <nav class="proj__nav section stepC">
 	<ul class="proj__nav-wrapper">
 		{% if pagination.href.next %}

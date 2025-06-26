@@ -1,5 +1,5 @@
 {% macro frame(emailURL) %}
-<div class="frame-wrapper">
+<div class="frame-wrapper crs__item">
 	<div class="screen-wrapper">
 		<section class="generic-block phone-bar">
 			<div class="active">
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 		</section>
-		<nav class="app-nav">
+		{# <nav class="app-nav">
 			<div class="back">
 				<svg class="icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -48,9 +48,9 @@
 					<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</div>
-		</nav>
+		</nav> #}
 		<section class="app-wrapper">
-			<header class="app-header">
+			{# <header class="app-header">
 				<div class="subject-line">Email Subject Line</div>
 				<div class="send-info">
 					<div class="envelope-info">
@@ -66,7 +66,7 @@
 					</div>
 					<div class="send-time subtle" style="white-space: preserve nowrap;">10:10 AM</div>
 				</div>
-			</header>
+			</header> #}
 			<section class="email-wrapper">
 				<iframe src="{{ emailURL }}" frameborder="0"></iframe>
 			</section>

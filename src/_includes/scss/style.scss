@@ -4,6 +4,7 @@
 @use "_utilities" as utility;
 @use "__mobile-nav";
 @use "_phone-frame";
+@use "_carousel.scss";
 
 /* -------------------------------------------------------------------------- */
 /*                                   Basics                                   */
@@ -950,7 +951,7 @@ img {
 	font-weight: 400;
 	font-stretch: 70%;
 	margin-bottom: 1em;
-	letter-spacing: -0.04em;
+	letter-spacing: -0.03em;
 	line-height: 1.4;
 }
 
@@ -1341,5 +1342,13 @@ img {
 		--background-color: var(--main-night);
 		--fg-glass: var(--bright-glass);
 		--bg-glass: var(--night-glass);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.home--work__svg,
+	.footer-svg {
+		animation: none;
 	}
 }

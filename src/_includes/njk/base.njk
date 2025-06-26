@@ -1,54 +1,57 @@
 <!doctype html>
 <html class="no-js" lang="en" data-color-scheme="default" data-color-flavor="default">
 
-	<head>
-		<meta charset="utf-8">
-		<title>{{ title }}</title>
-		<meta name="description" content="A Digital Designer who is eager to keep growing while giving.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Open Graph -->
-		<meta property="og:title" content="Designer | Sami Moya Medina">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://www.smoya.me/">
+<head>
+	<meta charset="utf-8">
+	<title>{{ title }}</title>
+	<meta name="description" content="A Digital Designer who is eager to keep growing while giving.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Open Graph -->
+	<meta property="og:title" content="Designer | Sami Moya Medina">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.smoya.me/">
 
-		<!-- Favi, Icons -->
-		<link rel="icon" href="/_assets/images/favicon.png" sizes="any">
-		<link rel="icon" href="/_assets/images/favicon.svg" type="image/svg+xml">
-		<link rel="apple-touch-icon" href="/_assets/images/favicon.png">
-		<!-- Stylesheet -->
-		<link rel="stylesheet" href="/style.css">
-		<script src="/script.js" defer></script>
-		<noscript>
-			<style>
-				.cover.loading::before {
-					opacity: 0 !important;
-					visibility: hidden;
-				}
-			</style>
-		</noscript>
-	</head>
+	<!-- Favi, Icons -->
+	<link rel="icon" href="/_assets/images/favicon.png" sizes="any">
+	<link rel="icon" href="/_assets/images/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/_assets/images/favicon.png">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+	<script src="/script.js" defer></script>
 
-	<body class="body">
-		<div class="wrapper">
-			{% include "_header.njk" %}
-			<div id="smooth-wrapper">
-				<div id="smooth-content">
-					<main class="main">
-						{{ content | safe }}
-					</main>
-					{% include "_footer.njk" %}
-				</div>
+	<noscript>
+		<style>
+			.cover.loading::before {
+				opacity: 0 !important;
+				visibility: hidden;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body class="body">
+	<div class="wrapper">
+		{% include "_header.njk" %}
+		<div id="smooth-wrapper">
+			<div id="smooth-content">
+				<main class="main">
+					{{ content | safe }}
+				</main>
+				{% include "_footer.njk" %}
 			</div>
 		</div>
-		<!--Footer Bar-->
-		{% include "_footer-bar.njk" %}
-		<!-- Cursor -->
-		<div id="cursor" aria-hidden="true" data-scroll-sticky>
-			<div class="cursor__circle" aria-hidden="true"></div>
-		</div>
-		<!-- Scripts -->
+	</div>
+	<!--Footer Bar-->
+	{% include "_footer-bar.njk" %}
+	<!-- Cursor -->
+	<div id="cursor" aria-hidden="true" data-scroll-sticky>
+		<div class="cursor__circle" aria-hidden="true"></div>
+	</div>
+	<!-- Scripts -->
 
 
-	</body>
+</body>
 
 </html>

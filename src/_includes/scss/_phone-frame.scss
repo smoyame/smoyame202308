@@ -5,7 +5,7 @@
 	--spacing-h: 1.25rem;
 
 	font-optical-sizing: auto;
-	font-size: 15px;
+
 
 	--clr-bright: hsla(0, 100%, 100%, 1);
 	--clr-night: hsla(0, 0%, 10%, 1);
@@ -17,7 +17,8 @@
 }
 
 .frame-wrapper * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Flex', sans-serif;
+	font-size: 14px;
 }
 
 .frame-wrapper.dark {
@@ -39,10 +40,10 @@
 .frame-wrapper {
 	--outer-radius: 2rem;
 	--padding: .5rem;
-	aspect-ratio: 1 / 2;
-	width: min(411px, 100%);
+	aspect-ratio: 1 / 1.5;
+	width: min(420px, 100%);
 	padding: var(--padding);
-	background-color: var(--fg);
+	background-color: var(--clr-middle);
 	border-radius: var(--outer-radius);
 	display: flex;
 }
@@ -72,7 +73,6 @@
 
 .app-wrapper {
 	height: 100%;
-	overflow: scroll;
 }
 
 .app-nav {
@@ -97,7 +97,7 @@
 }
 
 .app-header {
-	padding-block-start: var(--spacing-h);
+	padding-block-start: var(--spacing-v);
 }
 
 iframe {
@@ -116,7 +116,7 @@ iframe {
 
 .email-wrapper {
 	padding: var(--spacing-v);
-	padding-block-end: calc(4 * var(--spacing-v));
+	padding-block-end: 0;
 }
 
 /* --------------- */
@@ -177,17 +177,17 @@ iframe {
 .send-info {
 	justify-content: space-between;
 	gap: 1rem;
-	padding-block: var(--spacing-v);
+	padding-block-start: var(--spacing-v);
 }
 
 .subject-line {
 	font-weight: 700;
-	font-size: 1.5rem;
-	margin-bottom: var(--spacing-v);
+	font-size: 1.5em;
+	margin-bottom: 0;
 }
 
 .sent .from {
-	font-size: 1.25rem;
+	font-size: 1.25em;
 	font-weight: 600;
 }
 
@@ -196,9 +196,6 @@ iframe {
 	padding: var(--spacing-h);
 	border-top: 1px solid var(--clr-middle);
 	background: var(--bg);
-	position: absolute;
-	left: 0;
-	bottom: 0;
 }
 
 .reply {
@@ -214,4 +211,10 @@ iframe {
 
 iframe {
 	overflow: visible;
+}
+
+iframe::-webkit-scrollbar,
+iframe::-moz-scrollbar {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }

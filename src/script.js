@@ -74,5 +74,43 @@ smileySVG.addEventListener("click", () => {
 Array.from(document.images).map((image) => {
 	image.decode().then(() => {
 		image.parentElement.classList.add('loaded')
+		image.parentElement.classList.remove('loading')
 	})
 })
+
+
+/* GSAP */
+
+/* did this grossly but need to get this out for now, at least */
+
+let contE = document.querySelector('.sc--email')
+if (contE) {
+	let sectionsE = gsap.utils.toArray(".email-child");
+	gsap.to(sectionsE, {
+		xPercent: () => (-100) * (sectionsE.length - 3),
+		ease: 'none',
+		scrollTrigger: {
+			trigger: '.sc--email',
+			pin: true,
+			scrub: .5,
+			start: 'top top',
+			end: () => "+=" + (contE.scrollWidth - window.innerWidth) * .5,
+		}
+	})
+}
+
+let contW = document.querySelector('.sc--web')
+if (contW) {
+	let sectionsW = gsap.utils.toArray(".webpage-child");
+	gsap.to(sectionsW, {
+		xPercent: () => (-100 - sectionsW.length + 1) * (sectionsW.length - 1),
+		ease: 'none',
+		scrollTrigger: {
+			trigger: '.sc--web',
+			pin: true,
+			scrub: .5,
+			start: 'top top',
+			end: () => "+=" + (contW.scrollWidth - (window.innerWidth * 2)),
+		}
+	})
+}
