@@ -941,6 +941,10 @@ iframe::-moz-scrollbar {
   .crs_child {
     padding-inline-end: var(--unit-D);
   }
+  .crs-image-wrapper::before,
+  .crs-child::before {
+    opacity: 1;
+  }
 }
 /* -------------------------------------------------------------------------- */
 /*                                   Basics                                   */
