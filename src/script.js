@@ -86,15 +86,16 @@ Array.from(document.images).map((image) => {
 let contE = document.querySelector('.sc--email')
 if (contE) {
 	let sectionsE = gsap.utils.toArray(".email-child");
-	gsap.to(sectionsE, {
-		xPercent: () => (-100) * (sectionsE.length - 3),
+	gsap.to('.crs__email', {
+		x: () => -1 * (contE.scrollWidth - window.innerWidth),
 		ease: 'none',
 		scrollTrigger: {
 			trigger: '.sc--email',
 			pin: true,
 			scrub: .5,
 			start: 'top top',
-			end: () => "+=" + (contE.scrollWidth - window.innerWidth) * .5,
+			end: () => `+=${contE.scrollWidth - window.innerWidth}`,
+			invalidateOnRefresh: true,
 		}
 	})
 }
@@ -102,15 +103,17 @@ if (contE) {
 let contW = document.querySelector('.sc--web')
 if (contW) {
 	let sectionsW = gsap.utils.toArray(".webpage-child");
-	gsap.to(sectionsW, {
-		xPercent: () => (-100 - sectionsW.length + 1) * (sectionsW.length - 1),
+	gsap.to('.crs__web', {
+		x: () => -1 * (contW.scrollWidth - window.innerWidth),
 		ease: 'none',
 		scrollTrigger: {
 			trigger: '.sc--web',
 			pin: true,
 			scrub: .5,
 			start: 'top top',
-			end: () => "+=" + (contW.scrollWidth - (window.innerWidth * 2)),
+			duration: 5,
+			end: () => `+=${contW.scrollWidth - window.innerWidth}`,
+			invalidateOnRefresh: true,
 		}
 	})
 }
